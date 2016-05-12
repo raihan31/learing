@@ -1,0 +1,15 @@
+.container.hoc-events
+  .row
+    .col-xs-12.section-header
+      h3 Book the time
+  .row
+    .col-xs-12.col-sm-6.col-md-4.col-lg-3(ng-repeat="data in events")
+      a.select-pane.select-pane-text(ng-href="{{data.href}}" target="_blank")
+        header.header-blue.align-children-middle
+          .dib.align-children-middle
+            h5 {{data.name}}
+        article.bottom.align-children-middle
+          p(ng-bind-html="data.description") 
+        .overlay.align-children-middle(ng-show="data.selected && !preventClick")
+          .checkmark.align-children-middle
+            i.ct-icon-check

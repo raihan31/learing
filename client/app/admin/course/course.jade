@@ -1,0 +1,52 @@
+.container
+  .row
+    .col-xs-12
+      h1 Courses
+      table.table
+        thead
+          tr
+            th Name
+            th Description
+            th Features
+            th Actions
+        tbody
+          tr(ng-repeat='course in courses track by $index', ng-show="course")
+            td {{course.name}}
+            td {{course.description}}
+            td
+              ul(ng-show='{{course.features}}').feature-lists
+                li(data-ng-repeat='feature in course.features track by $index')
+                  strong {{feature.name}}:
+                  span {{feature.value}}
+            td.actions
+              a(ng-href='#' class='btn-sm btn-warning' ng-click='editCourse(course._id)')
+                i.fa.fa-pencil
+              a(ng-href='#' class='btn-sm btn-danger' ng-click='removeCourse(course._id)')
+                i.fa.fa-times
+  .row
+    .col-xs-12
+      a(ng-click="toggleNewForm()", ng-href='#').btn.btn-primary {{addCourseText}}
+      form.form(name='form', novalidate='', ng-show="newFormVisible")
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', ng-model='course.name', focus-input-on='{{newFormVisible}}').auto-focus
+          p.help-block(ng-show='form.name.$error.required && submitted') Name is required
+        .form-group
+          label Description
+          textarea.form-control(name='name', ng-model='course.description')
+        div
+          a(hg-href='#' ng-click='addFeature()').btn
+            i.fa.fa-plus Feature
+        div.social-network
+          div(ng-repeat='feature in course.features track by $index').social-network-item
+            a(ng-href='#' ng-click='removeFeature($index)').remove-social-network
+              i.fa.fa-times-circle-o
+            label Name
+            input.form-control(type='text', name='feature.name', ng-model='feature.name')
+            label Description
+            input.form-control(type='text', name='feature.value', ng-model='feature.value')
+        div.pull-right
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createCourse()' ng-hide='isEdit')
+            | Create Course
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updateCourse(course._id)' ng-show='isEdit')
+            | Update Course

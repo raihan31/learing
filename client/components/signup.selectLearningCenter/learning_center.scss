@@ -1,0 +1,85 @@
+.learning-center {
+  cursor: pointer;
+  position: relative;
+
+  @include selected;
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 50px;
+  }
+
+  header {
+    width: 100%;
+    position: relative;
+    height: 127px;
+    text-align: center;
+    &:after {
+      content: "";
+
+      display: inline-block;
+      vertical-align: bottom;
+
+      width: 1px;
+      height: 100%;
+    }
+    img {
+      display: inline-block;
+      vertical-align: bottom;
+
+      height: auto;
+      width: auto;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      text-align: center !important;
+    }
+  }
+
+  article {
+    text-align: center;
+
+    h6 {
+      font-size: 25px;
+      color: $blue-color;
+      margin: 25px 0;
+    }
+
+    .text {
+      color: $asphalt-color;
+
+      i {
+        float: left;
+        font-size: 31px;
+      }
+
+      span {
+        @include ssp-regular($size: "15px", $lH: "17px");
+        text-align: left;
+        display: block;
+        margin-left: 40px;
+        width: auto;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        text-align: center;
+
+        span,
+        i {
+          display: inline-block;
+          float: none;
+        }
+
+        i {
+          text-align: right;
+          width: 25px;
+        }
+
+        span {
+          width: 65%;
+          margin-left: 20px;
+        }
+
+      }
+    }
+  }
+}

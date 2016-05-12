@@ -1,0 +1,280 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="ctSignupApp">
+<!--<![endif]-->
+
+<head ng-controller="HeadCtrl">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title ng-bind-html="head.title"></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/5379a5938fa1ea4e1cba8034/537efd4a7b58dcd03527229e_favicon.ico">
+    <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
+    <script src="https://use.typekit.net/zac7jrf.js"></script>
+    <script>
+    try {
+        Typekit.load({
+            async: true
+        });
+    } catch (e) {}
+    </script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="app/app.css">
+    <!-- injector:css -->
+    <link rel="stylesheet" href="app/app.css">
+    <!-- endinjector -->
+    <!-- endbuild -->
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <div class="application-container" ui-view=""></div>
+    <!-- Google Analytics: change UA-68670014-1 to be your site's ID -->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-57401072-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 934537314;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <!-- Start of coderstrustsupport Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("//assets.zendesk.com/embeddable_framework/main.js","coderstrustsupport.zendesk.com");
+/*]]>*/</script>
+    <!-- End of coderstrustsupport Zendesk Widget script -->
+    <script>
+    ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window,
+        document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '816109598431603');
+    fbq('track', "PageView");
+    </script>
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/waypoints/lib/noframework.waypoints.js"></script>
+    <script src="bower_components/highlightjs/highlight.pack.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/Snap.svg/dist/snap.svg-min.js"></script>
+    <script src="bower_components/zAccordion/js/jquery.zaccordion.js"></script>
+    <script src="bower_components/jquery-numerator/jquery-numerator.js"></script>
+    <script src="bower_components/wow/dist/wow.js"></script>
+    <script src="bower_components/jquery.resizeend/dist/jquery.resizeend.js"></script>
+    <script src="bower_components/slick/dist/slick.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+    <script src="bower_components/momentjs/moment.js"></script>
+    <script src="bower_components/humanize-duration/humanize-duration.js"></script>
+    <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
+    <script src="bower_components/angular-svg-round-progressbar/build/roundProgress.min.js"></script>
+    <script src="bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>
+    <script src="bower_components/satellizer/satellizer.js"></script>
+    <script src="bower_components/angulike/angulike.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <!-- endbower -->
+    <script src="socket.io-client/socket.io.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({.tmp,client}) app/app.js -->
+    <script src="app/app.js"></script>
+    <!-- injector:js -->
+    <script src="app/account/account.js"></script>
+    <script src="app/account/login/login.controller.js"></script>
+    <script src="app/account/settings/settings.controller.js"></script>
+    <script src="app/account/signin/signin.controller.js"></script>
+    <script src="app/account/signup/signup.controller.js"></script>
+    <script src="app/account/signup_iframe/signup_iframe.controller.js"></script>
+    <script src="app/account/signup_success/signup_success.controller.js"></script>
+    <script src="app/admin/admin.controller.js"></script>
+    <script src="app/admin/admin.js"></script>
+    <script src="app/admin/course/course.controller.js"></script>
+    <script src="app/admin/customer_review/customer_review.controller.js"></script>
+    <script src="app/admin/index/index.controller.js"></script>
+    <script src="app/admin/mentor/mentor.controller.js"></script>
+    <script src="app/admin/office/office.controller.js"></script>
+    <script src="app/admin/portfolio/portfolio.controller.js"></script>
+    <script src="app/admin/success_story/success_story.controller.js"></script>
+    <script src="app/admin/team/team.controller.js"></script>
+    <script src="app/admin/up_work/up_work.controller.js"></script>
+    <script src="app/admin/workshop/workshop.controller.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/head/head.controller.js"></script>
+    <script src="app/hourofcode/events/events.controller.js"></script>
+    <script src="app/hourofcode/home/home.controller.js"></script>
+    <script src="app/hourofcode/hourofcode.js"></script>
+    <script src="app/hourofcode/location/location.controller.js"></script>
+    <script src="app/student.js"></script>
+    <script src="app/student/learning/course/course.controller.js"></script>
+    <script src="app/student/learning/courses/courses.controller.js"></script>
+    <script src="app/student/learning/learning.controller.js"></script>
+    <script src="app/student/learning/learning.js"></script>
+    <script src="app/student/learning/onlinetest/online.skill.test.controller.js"></script>
+    <script src="app/student/learning/onlinetest/online.tests.controller.js"></script>
+    <script src="app/student/learning/onlinetest/onlineTest.js"></script>
+    <script src="app/student/learning/onlinetest/onlinetest.question.controller.js"></script>
+    <script src="app/student/login/login.controller.js"></script>
+    <script src="app/student/login/login.decorator.js"></script>
+    <script src="app/student/login/resend_confirmation_email/resend_confirmation_email.js"></script>
+    <script src="app/student/login/reset_password/reset_password.controller.js"></script>
+    <script src="app/student/login/reset_password_request/reset_passsword_request.controller.js"></script>
+    <script src="app/student/me/about/about.controller.js"></script>
+    <script src="app/student/me/me.controller.js"></script>
+    <script src="app/student/me/me.js"></script>
+    <script src="app/student/me/pay/pay.controller.js"></script>
+    <script src="app/student/me/referral/referral.controller.js"></script>
+    <script src="app/student/me/subscription/subscription.controller.js"></script>
+    <script src="app/student/me/subscriptions/subscriptions.controller.js"></script>
+    <script src="app/student/student.controller.js"></script>
+    <script src="app/student/success_story/success_story.js"></script>
+    <script src="app/website/about/about.controller.js"></script>
+    <script src="app/website/earn/earn.controller.js"></script>
+    <script src="app/website/finance/finance.controller.js"></script>
+    <script src="app/website/home/home.controller.js"></script>
+    <script src="app/website/learning/learning.controller.js"></script>
+    <script src="app/website/website.controller.js"></script>
+    <script src="app/website/website.js"></script>
+    <script src="components/auth/auth.service.js"></script>
+    <script src="components/auth/authStudent.service.js"></script>
+    <script src="components/auth/student.service.js"></script>
+    <script src="components/auth/user.service.js"></script>
+    <script src="components/authentication_directives/authentication_directives.js"></script>
+    <script src="components/batch/batch.js"></script>
+    <script src="components/common/directives.js"></script>
+    <script src="components/course/course.js"></script>
+    <script src="components/ct_course_accordion/ct_course_accordion.js"></script>
+    <script src="components/ct_course_content/ct_course_content.js"></script>
+    <script src="components/ct_course_list_item/ct_course_list_item.js"></script>
+    <script src="components/ct_floating_nav/ct_floating_nav.js"></script>
+    <script src="components/ct_footer/ct_footer.js"></script>
+    <script src="components/ct_footer_student/ct_footer_student.js"></script>
+    <script src="components/ct_hero/ct_hero.js"></script>
+    <script src="components/ct_learning_path_item/ct_learning_path_item.js"></script>
+    <script src="components/ct_modal_prompt/ct_modal_prompt.controller.js"></script>
+    <script src="components/ct_navbar/ct_navbar.js"></script>
+    <script src="components/ct_navbar_admin/ct_navbar_admin.js"></script>
+    <script src="components/ct_navbar_student/ct_navbar_student.js"></script>
+    <script src="components/ct_office_address/ct_office_address.js"></script>
+    <script src="components/ct_online_test_questions/ct_online_test_question_submission_factory.js"></script>
+    <script src="components/ct_online_test_questions/ct_online_test_questions.js"></script>
+    <script src="components/ct_online_test_questions/ct_online_test_questions_factory.js"></script>
+    <script src="components/ct_online_test_time_tracker/ct_online_test_time_tracker.js"></script>
+    <script src="components/ct_password_recovery/ct_password_recovery.controller.js"></script>
+    <script src="components/ct_password_recovery/ct_password_recovery.js"></script>
+    <script src="components/ct_person_block/ct_person_block.js"></script>
+    <script src="components/ct_project_list_item/ct_project_list_item.js"></script>
+    <script src="components/ct_referral_link/ct_referral_link.js"></script>
+    <script src="components/ct_signin/ct_signin.js"></script>
+    <script src="components/ct_signup/ct_signup.js"></script>
+    <script src="components/ct_signup_congrats/ct_signup_congrats.js"></script>
+    <script src="components/ct_signup_congrats_modal/ct_signup_congrats_modal.js"></script>
+    <script src="components/ct_signup_congrats_modal/ct_singup_congrats.controller.js"></script>
+    <script src="components/ct_signup_enroll_btn/ct_signup_enroll_btn.js"></script>
+    <script src="components/ct_student_auth_question_modal/ct_student_auth_question.controller.js"></script>
+    <script src="components/ct_student_authentications_factory/ct_student_authentications_factory.js"></script>
+    <script src="components/ct_student_course_lesson/ct_student_course.controller.js"></script>
+    <script src="components/ct_student_course_lesson/ct_student_course_lesson_factory.js"></script>
+    <script src="components/ct_student_education_details/ct_student_education_details.js"></script>
+    <script src="components/ct_student_education_details/ct_student_education_details_factory.js"></script>
+    <script src="components/ct_student_education_modal/ct_student_education_modal.js"></script>
+    <script src="components/ct_student_hero/ct_student_hero.js"></script>
+    <script src="components/ct_student_personalInfo_factory/ct_student_personalInfo_factory.js"></script>
+    <script src="components/ct_student_profile/ct_student_profile.js"></script>
+    <script src="components/ct_student_referral_link_factory/ct_student_referral_link_factory.js"></script>
+    <script src="components/ct_student_subscriptions_factory/ct_student_subscriptions.js"></script>
+    <script src="components/ct_team_member/ct_team_member.js"></script>
+    <script src="components/ct_track_pane/ct_track_pane.js"></script>
+    <script src="components/ct_webpages_config_decorator/ct_webpages_config_decorator.js"></script>
+    <script src="components/education_model/education_model.js"></script>
+    <script src="components/focus_input_on/focus_input_on.js"></script>
+    <script src="components/forbideScroll/forbideScroll.js"></script>
+    <script src="components/lazyYT/lazyYT.js"></script>
+    <script src="components/learningCenter/learningCenter.js"></script>
+    <script src="components/modal/modal.service.js"></script>
+    <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+    <script src="components/navbar/navbar.controller.js"></script>
+    <script src="components/selectPane/selectPane.js"></script>
+    <script src="components/selectPaneText/selectPaneText.js"></script>
+    <script src="components/signup.educationModel/signup.educationModel.js"></script>
+    <script src="components/signup.intro/signup.intro.js"></script>
+    <script src="components/signup.navigation/signup.navigation.js"></script>
+    <script src="components/signup.nextStep/signup.nextStep.js"></script>
+    <script src="components/signup.payment/payment_decorator.js"></script>
+    <script src="components/signup.payment/signup.payment.js"></script>
+    <script src="components/signup.personalData/signup.personalData.js"></script>
+    <script src="components/signup.selectBatch/signup.selectBatch.js"></script>
+    <script src="components/signup.selectCourse/signup.selectCourse.js"></script>
+    <script src="components/signup.selectLearningCenter/signup.selectLearningCenter.js"></script>
+    <script src="components/signup/signup.stm.js"></script>
+    <script src="components/social_networks_pages/social_networks_pages.js"></script>
+    <script src="components/socket/socket.service.js"></script>
+    <script src="components/student_menu_items/student_menu_items.js"></script>
+    <script src="components/up_work/up_work.js"></script>
+    <script src="components/util/util.js"></script>
+    <script src="components/website_menu_items/website_menu_items.js"></script>
+    <!-- endinjector -->
+    <!-- endbuild -->
+</body>
+
+</html>

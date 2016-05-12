@@ -1,0 +1,52 @@
+.student-hero
+  .container
+    .row
+      .col-xs-12.col-md-2
+        .avatar-and-status.pull-right
+          .avatar
+            img(ng-src="{{student.avatar}}" alt="{{student.name}}")
+            .upload.upload-edit
+              .circle
+                //- .fa.fa-plus
+                .fa.fa-pencil
+
+          strong Status
+          span {{student.status}}
+      .col-xs-12.col-md-4
+        h4 {{student.name}}
+        .joined JOINED CodersTrust in {{student.joined}}
+        .intro
+          p {{student.intro}}
+      .col-xs-12.col-md-5.col-md-offset-1
+        h5 Learn History
+
+        .history
+          .item
+            h4 {{student.total_hours}}
+            p
+              | hours
+              br
+              | learned
+          .item
+            h4 {{student.subscribtions_count}}
+            p
+              | courses
+              br
+              | selected
+          .item.item-progress
+            h4
+              | {{student.tests_passed}}
+              span of {{student.tests_total}}
+            p
+              | tests
+              br
+              | completed
+            .round-progress(round-progress='', max='student.tests_total', current='student.tests_passed', color='#45ccce', bgcolor='#eaeaea', radius='100', stroke='5', rounded='true', clockwise='true', responsive='false')
+    .row.nav
+      .col-xs-12
+        nav
+          a.pull-left(ng-repeat="item in menuItems" ui-sref="{{item.uiSref}}" ui-sref-active="active" href="")
+            | {{item.name}}
+
+
+

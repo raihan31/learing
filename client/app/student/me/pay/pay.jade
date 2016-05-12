@@ -1,0 +1,62 @@
+.container.student-about.subscriptions
+  .row
+    .col-xs-12
+      div(ncy-breadcrumb)
+  .row
+    .col-xs-12
+      h5 Payment
+  .row
+    .col-xs-12.col-md-5
+      .info
+        .attribute
+          .key student batch
+          .value {{subscription.student_batch}}
+        .attribute
+          .key selected course
+          .value {{subscription.course_name}}
+        .attribute
+          .key education model
+          .value {{subscription.educationModel}}
+        .attribute
+          .key Allowed number of installments
+          .value {{subscription.installments}}
+        .attribute
+          .key course fee
+          .value $ {{subscription.course_fee}}
+        .attribute
+          .key Confirmed paid amount
+          .value $ {{subscription.paid_amount}}
+    .col-xs-12.col-md-5.col-md-offset-2.subscriptions-payment-option
+      form(role='form')
+        label.radio-inline
+          input(type='radio', name='paymentOptions', value='')
+          img.payment-paypal(src='assets/images/paypal_logo.png')
+        label.radio-inline
+          input(type='radio', name='paymentOptions', value="")
+          img.payment-mastercard(src='assets/images/mastercard.png')
+        label.radio-inline
+          input(type='radio', name='paymentOptions', value="")
+          img.payment-visa(src='assets/images/visa.gif')
+
+      //form(role='form')
+      //  label.radio-inline
+      //    input(type='radio', name='paypal' value="")
+      //    br
+      //    img(src='assets/images/paypal_logo.png')
+      //  label.radio-inline
+      //    input(type='radio', name='mastercard' value="")
+      //    br
+      //    img(src='assets/images/mastercard.png')
+      //  label.radio-inline
+      //    input(type='radio', name='visa' value="")
+      //    br
+      //    img(src='assets/images/visa.gif')
+      //select.form-control(name='pay', ng-model='', required='required')
+      //  option(value='paypal') Paypal
+      //  option(value='mastercard') Master Card
+      //  option(value='visa') Visa
+      a.btn.btn-success.subscriptions-btn(ng-click='')
+        | Pay
+
+
+

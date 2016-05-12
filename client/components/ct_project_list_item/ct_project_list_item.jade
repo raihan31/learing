@@ -1,0 +1,16 @@
+.project-list-item(ng-waypoints waypoint-data="project" broadcast-event="waypoint:achived" id="{{project.waypointName}}")
+  img(ng-src="{{project.thumbUrl}}" alt="{{project.name}}")
+  .content
+    h3 {{project.name}}
+    p {{project.shortDescription}}
+  .statistics 
+    .item.align-children-middle
+      .item-content
+        .icon.icon-circle-progress
+          .icon-circle-progress-current(class="icon-circle-progress-current-{{project.progress}}")
+        span {{project.progress}} %
+    .item.align-children-middle(ui-sref="project.show({id: project.id})")
+      .item-content
+        i.ct-icon-enter
+        span View
+  div(ng-waypoints waypoint-data="project" broadcast-event="waypoint:achived")

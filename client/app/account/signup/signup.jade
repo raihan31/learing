@@ -1,0 +1,9 @@
+//ct-navbar(menu-items-data="menuItems" social-data="socialNetworkNavs")
+ct-signup-intro#intro(ng-show="!enrolled")
+ct-signup-personal-data#personal_data(student="student" ng-show="!enrolled && showStep('personal_data')" )
+ct-signup-select-learning-center#select_learning_center(student="student" ng-show="!enrolled && showStep('select_learning_center')")
+ct-signup-select-course#select_course(student="student" ng-show="!enrolled && showStep('select_course')")
+ct-signup-select-education-model#select_education_model(student="student" ng-show="!enrolled && showStep('select_education_model')")
+ct-signup-congrats-modal(student="student")
+div(menu-items-data="menuItems" social-data="socialNetworkNavs" ct-footer)
+

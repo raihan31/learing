@@ -1,0 +1,25 @@
+div.map-list(ng-repeat="map in countryMaps")
+  a(href='javascript:void(0);', ng-click='loadMember(map.country)')
+    img(ng-src='{{map.img}}')
+
+ul.staff.clearfix
+  li(ng-repeat='member in teamMembers')
+    .person-block
+      span.img
+        span.mask
+          img(ng-src='{{member.picture.url}}')
+      span.name {{member.first_name}} {{member.last_name}}
+      span.appointment {{member.role}}
+      ul.social-list
+        li(ng-if='member.social_link.facebook')
+          a(ng-href='{{member.social_link.facebook}}')
+            i.fa.fa-facebook
+        li(ng-if='member.email')
+          a(ng-href='mailto:{{member.email}}')
+            i.fa.fa-envelope
+        li(ng-if='member.social_link.twitter')
+          a(ng-href='{{member.social_link.linkedin}}')
+            i.fa.fa-linkedin
+        li(ng-if='member.social_link.twitter')
+          a(ng-href='{{member.social_link.twitter}}')
+            i.fa.fa-twitter

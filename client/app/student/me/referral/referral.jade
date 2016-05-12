@@ -1,0 +1,65 @@
+.container.student-about.referral
+  .row
+    .col-xs-12
+      div(ncy-breadcrumb)
+  .row
+    .col-xs-12.section-header
+      h3
+        | Study with your friends & Earn $25 for each referral.*
+      h5
+        | Great thing your friend will also earn $25
+  .row
+    .col-xs-12
+      .steps-to-take
+        .step
+          i.fa.fa-user-plus
+          h4.text Invite
+        .step
+          i.fa.fa-sign-in
+          h4.text Sign Up
+        .step
+          i.fa.fa-money
+          h4.text Earn
+      .note
+        | *Once your referral successfully joins the paid program, you and your friend will receive upto $25 in cash.
+      h5 Share message
+  .row
+    .col-xs-12.col-md-10.col-md-offset-1
+      .share-message
+        | {{invitedFriendsStudent.intro}}
+        a {{invitedFriends.invitation_url}}
+
+      //div(fb-like='invitedFriends.invitation_url')
+      .share-buttons
+        a.btn.btn-primary.btn-regular
+          //i.fa.fa-envelope-square
+          .text(google-plus='invitedFriends.invitation_url')
+        a.btn.btn-primary.btn-regular
+          //i.fa.fa-facebook-square
+          .text(fb-like='invitedFriends.invitation_url')
+        a.btn.btn-primary.btn-regular
+          //i.fa.fa-twitter-square
+          .text(tweet='invitedFriends.invitation_url')
+        a.btn.btn-primary.btn-regular
+          //i.fa.fa-linkedin-square
+          .text(pin-it="invitedFriends.invitation_url")
+
+  .row
+    .col-xs-12
+      h5 Your referral link
+      ct-referral-link(referral-url="invitedFriends.invitation_url")
+  //.row
+  //  .col-xs-12.col-md-8
+  //   .pane
+  //     h5 invited friends
+  //       .invited-friends
+  //         .avatar-and-status(ng-repeat="student in invitedFriendsStudent")
+  //           .avatar
+  //             img(ng-src="{{invitedFriendsStudent.avatar}}" alt="{{student.name}}")
+  //           strong {{invitedFriendsStudent.name}}
+  //  .col-xs-12.col-md-4
+  //   .pane
+  //     h5 profit
+  //     p Your profit on referral program:
+  //     h2 $ {{profit()}}
+

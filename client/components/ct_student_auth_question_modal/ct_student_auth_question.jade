@@ -1,0 +1,6 @@
+.modal-header
+  h3.modal-title {{text.headerText}}
+.modal-body(ng-bind-html="text.text")
+.modal-footer
+  button.btn.btn-success(type='button', ng-click='confirm()') Yes
+  button.btn.btn-danger(type='button', ng-click='cancel()') No

@@ -1,0 +1,27 @@
+#footer
+  //ul.site-nav
+  //  li(ng-repeat="item in menuItems" ng-class="{active: item.active}")
+  //    a(ng-href='{{item.href}}')
+  //      | {{item.name}}
+  .horizontal-dib-helper
+  ul.social-nav
+    li(ng-repeat="socNav in socialNetworkNavs")
+      a(ng-href="{{socNav.url}}" target="_blank")
+        i(class="{{socNav.iconClass}}")
+  .horizontal-dib-helper
+  a.logo(href="/")
+    i.ct-icon-ct-logo
+  .horizontal-dib-helper
+  span Copyright 2015 CodersTrust Aps
+
+script(type='text/javascript').
+  /* <![CDATA[ */
+  var google_conversion_id = 934537314;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+script(type='text/javascript', src='//www.googleadservices.com/pagead/conversion.js')
+noscript
+  div(style='display:inline;')
+    img(height='1', width='1', style='border-style:none;', alt='', src='//googleads.g.doubleclick.net/pagead/viewthroughconversion/934537314/?value=0&guid=ON&script=0')
+<!-- Facebook Pixel Code -->

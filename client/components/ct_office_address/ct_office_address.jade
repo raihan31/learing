@@ -1,0 +1,12 @@
+section.map-section.text-center
+  .container
+    h1 Offices
+    p Everyday students & alumni are using the skills they acquired through this path to serve clients and earn money on the freelance marketplaces.
+    ul.clearfix.offices-list
+      li(ng-repeat="address in officeAddress")
+        .title {{address.title}}
+        .description
+          .w-icon-location
+          span {{address.location}}
+          .number
+            strong {{address.phone}}

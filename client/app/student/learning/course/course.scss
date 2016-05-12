@@ -1,0 +1,139 @@
+.col-xs-3-padding {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: -15px;
+}
+
+.course {
+  background-color: $almost-white;
+
+  &.darker {
+    background-color: #e9eff2;
+  }
+
+  .row-relative {
+    position: relative;
+  }
+
+  #sidebar,
+  #sidebar-navigation {
+    .content-type {
+      color: $lighter-grey-color;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      line-height: 1;
+      text-transform: uppercase;
+
+      display: block;
+      margin-bottom: 15px;
+    }
+    h6 {
+      font-family: "Source Sans Pro";
+      font-size: 16px;
+      line-height: 10px;
+      display: block;
+      font-weight: 400;
+      text-transform: none;
+      margin-bottom: 30px;
+    }
+  }
+
+  #sidebar-navigation {
+    padding-top: 25px;
+  }
+
+  #sidebar {
+    padding-top: 25px;
+    padding-bottom: 15px;
+
+    svg {
+      display: inline-block;
+      height: 51px;
+
+      path {
+        fill: $lighter-grey-color;
+      }
+    }
+
+    h4 {
+      color: $blue-color;
+      font-size: 20px;
+      line-height: 26px;
+      margin: 5px 0 20px;
+    }
+
+    .attribute {
+      margin-top: 20px;
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+
+      .value {
+        font-size: 16px;
+      }
+    }
+
+    .alert {
+      width: auto;
+    }
+
+    .link-with-icon {
+      display: block;
+      margin-bottom: 10px;
+
+      i {
+        color: $lighter-grey-color;
+      }
+
+      i + .text {
+        color: $blue-color;
+        font-weight: bold;
+
+        &:hover {
+          color: $light-blue-color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  #course-content {
+    background: #fff;
+  }
+}
+
+#course-content-details {
+  padding-top: 25px;
+  padding-bottom: 15px;
+
+  h4 {
+    color: $blue-color;
+    font-size: 20px;
+    line-height: 26px;
+    margin: 5px 0 0;
+  }
+  h6 {
+    color: $blue-color;
+  }
+  .properties {
+    display: table;
+    margin: 0 0 20px;
+    //border-style: solid;
+    clear: left;
+    background: #23241f;
+    border-collapse: separate;
+    padding: 12px 32px 12px 12px;
+    //border-width: 0 0 0 5px;
+    /* border-color: #558abb; */
+  }
+  .ct-learning-video {
+    margin-top: 30px;
+    padding-left: 0px;
+
+    object {
+      width: 100%;
+    }
+  }
+}
+

@@ -1,0 +1,63 @@
+.container
+  .row
+    .col-xs-12
+      h1 Success Story
+      table.table
+        thead
+          tr
+            th Name
+            th Story
+            th Earn
+            th Social Networks
+            th Avatar
+            th Actions
+        tbody
+          tr(ng-repeat='story in successStories track by $index', ng-show="story._id")
+            td {{story.name}}
+            td {{story.story}}
+            td {{story.earning}}
+            td
+             a(ng-repeat='network in story.socialNetworks track by $index' ng-href='{{network.url}}' ng-show='network')
+               i(class='{{network.iconClass}}')
+            td
+              img(ng-src='{{story.image.original.url}}').index-view-image
+            td
+              a(ng-href='#', ng-click='editSuccessStory(story._id)') Edit |
+              a(ng-href='#', ng-click='removeSuccessStory(story._id)') Delete
+  .row
+    .col-xs-12
+      a(ng-click="toggleNewForm()", ng-href='#').btn.btn-primary {{addSuccessStoryText}}
+      form.form(name='form', novalidate='', ng-show="newFormVisible")
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', ng-model='successStory.name', focus-input-on='{{newFormVisible}}')
+          p.help-block(ng-show='form.name.$error.required && submitted') Name is required
+        .form-group
+          label Story
+          textarea.form-control(name='story', ng-model='successStory.story')
+        .form-group
+          label Earning
+          input.form-control(type='text', name='earning', ng-model='successStory.earning')
+        div
+          a(hg-href='#' ng-click='addSocialNetwork()').btn +Add Social Network
+        div.social-network
+          div(ng-repeat='socialNetwork in successStory.socialNetworks track by $index' ng-hide='socialNetwork._destroy').social-network-item
+            a(ng-href='#' ng-click='removeSocialNetwork($index)').remove-social-network
+              i.fa.fa-times-circle-o
+            label IconClass
+            input.form-control(type='text', name='socialNetwork.iconclass', ng-model='socialNetwork.iconClass')
+            label URL
+            input.form-control(type='text', name='socialNetwork.url', ng-model='socialNetwork.url')
+            label Name
+            input.form-control(type='text', name='socialNetwork.name', ng-model='socialNetwork.name')
+        .form-group
+          a.btn.btn-primary(name='user_image', ng-model='image', ngf-select="setFile($file, $invalidFiles)" accept="image/*" ngf-max-size="1MB") Select User Image
+          div.preview-wrapper
+            p(ng-show='errorMsg').alert.alert-danger {{errorMsg}}
+            img(src='{{successStory.image.original.url}}' ngf-thumbnail="image" ng-show='successStory.image || image').preview-image
+        div.pull-right
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createSuccessStory()' ng-show='createStory')
+            | Create Success Story
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updateSuccessStory(successStory._id)' ng-hide='createStory')
+            | Update Success Story
+

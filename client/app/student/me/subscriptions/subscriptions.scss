@@ -1,0 +1,72 @@
+.student-about.subscriptions {
+
+  .table.table-subscriptions {
+    th,
+    td {
+      min-height: 62px;
+      padding: 20px;
+    }
+    th {
+      border-top: 0;
+      border-right: 1px solid $white;
+      background: $almost-white;
+
+      color: #9bb1bb;
+      font-size: 11px;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    td {
+      border-color: $almost-white;
+
+      &.cell-number {
+        color: #9bb1bb;
+        font-size: 16px;
+      }
+      &.cell-batch {
+        color: $blue-color;
+        font-size: 16px;
+      }
+      &.cell-course {
+        a {
+          color: $light-blue-color;
+          font-size: 15px;
+          line-height: 1;
+        }
+      }
+      &.cell-paid,
+      &.cell-deposit,
+      &.cell-fee,
+      &.cell-education {
+        color: $blue-color;
+        font-size: 15px;
+      }
+      &.cell-actions {
+        a.btn.btn-edit {
+          float: left;
+          font-size: 15px;
+          margin-top: 10px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+      &.cell-icon {
+        i {
+          font-size: 50px;
+          color: $light-blue-color;
+        }
+      }
+
+      &.cell-label {
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+nav.navbar.navbar-default.navbar-fixed-top.ct-navbar
+  .container
+    // Brand and toggle get grouped for better mobile display
+    .navbar-header
+      a.navbar-brand(href='/')
+        i.ct-icon.ct-icon-ct-logo
+        // .hidden-sm.hidden-xs 
+        // i.ct-icon.ct-icon-ct-logo-small.hidden-md.hidden-lg
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-nav-ct
+        li(ng-repeat="item in menuItems" ng-class="{active: item.active}")
+          a(ng-href='{{item.href}}')
+            | {{item.name}}
+        

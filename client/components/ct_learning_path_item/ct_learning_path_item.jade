@@ -1,0 +1,18 @@
+.learning-path-item
+  .top-part
+    .hover
+    a.view(href="/learning") view
+    header(ng-if="data.icon" ng-bind-html="trustAsHtml(data.icon)")
+    article
+      h6 {{data.name}}
+      .description {{data.description | htmlToPlaintext | shorterText:147}}
+  ul.highlights
+    li.hover
+    li(ng-repeat="feature in data.features | limitTo:3")
+      .name 
+        strong {{feature.name}}:&nbsp;
+        | {{feature.value}}
+    
+  .clear
+  ng-transclude
+      

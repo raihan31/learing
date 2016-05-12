@@ -1,0 +1,242 @@
+.finance-block {
+  min-height: 765px;
+  background: url("#{$img-path}/finance-bg.jpg") no-repeat center center scroll #000;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding: 145px 0 0;
+  text-align: center;
+  img {
+    width: auto;
+    max-width: none;
+  }
+  &:not(.block2) {
+    h2 {
+      color: $white
+    }
+  }
+}
+.finance-block.centered .container {
+  height: 100%;
+}
+.finance-block.block2 {
+  min-height: 490px;
+  padding-top: 160px;
+  background: url("#{$img-path}/finance-bg2.jpg") no-repeat center center scroll #000;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: $white;
+}
+.stickers {
+  margin-top: -110px;
+  margin-bottom: -100px;
+  display: block
+}
+.stickers .stick {
+  text-align: center;
+  position: relative;
+  padding: 120px 20px 20px;
+  min-height: 575px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #fff;
+  -moz-box-shadow: 0 23px 18px rgba(0, 40, 110, 0.5);
+  -webkit-box-shadow: 0 23px 18px rgba(0, 40, 110, 0.5);
+  box-shadow: 0 23px 18px rgba(0, 40, 110, 0.5)
+}
+.stickers .stick .w-circle {
+  position: absolute;
+  left: 50%;
+  top: -87px;
+  margin-left: -87px;
+  width: 174px;
+  height: 174px;
+  -moz-border-radius: 104px;
+  -webkit-border-radius: 104px;
+  border-radius: 104px;
+  -moz-background-clip: padding;
+  -o-background-clip: padding-box;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  background-color: #fff;
+  -moz-box-shadow: 0 13px 16px #cdd9dd;
+  -webkit-box-shadow: 0 13px 16px #cdd9dd;
+  box-shadow: 0 13px 16px #cdd9dd;
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    visibility: hidden;
+    margin-left: -1px;
+    vertical-align: middle;
+  }
+}
+.stickers .stick p {
+  font-size: 17px
+}
+.stickers .stick .caption {
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #001451;
+  font-size: 45px
+}
+.table-payment {
+  margin-top: -214px;
+  padding-bottom: 70px
+}
+.table-payment table, .pay-slider table {
+  table-layout: fixed;
+  width: 100%
+}
+.table-payment tr:last-child td .col-wrap, .pay-slider tr:last-child td .col-wrap {
+  -moz-border-radius: 0 0 8px 8px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 8px 8px
+}
+.table-payment tr:last-child .col, .pay-slider tr:last-child .col {
+  border-color: transparent !important
+}
+.table-payment tr td, .pay-slider tr td {
+  padding: 0 16px;
+  height: 94px;
+  vertical-align: middle
+}
+.table-payment tr td .w-circle, .pay-slider tr td .w-circle {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  background: #23a5e1;
+  font-size: 0;
+}
+.table-payment tr td .w-circle {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    visibility: hidden;
+    vertical-align: middle;
+    margin-left: -1px;
+  }
+}
+.table-payment tr td .w-circle .minus, .pay-slider tr td .w-circle .minus {
+  width: 10px;
+  height: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #fff
+}
+.table-payment tr td .w-circle .plus, .pay-slider tr td .w-circle .plus {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle
+}
+
+.table-payment tr td i.fa {
+  color: $white;
+  vertical-align: middle;
+  font-size: 12px;
+}
+.table-payment tr td .w-circle .plus:after, .table-payment tr td .w-circle .plus:before, .pay-slider tr td .w-circle .plus:after, .pay-slider tr td .w-circle .plus:before {
+  content: "";
+  background: #fff;
+  position: absolute
+}
+.table-payment tr td .w-circle .plus:before, .pay-slider tr td .w-circle .plus:before {
+  width: 10px;
+  height: 2px;
+  left: 0;
+  top: 4px
+}
+.table-payment tr td .w-circle .plus:after, .pay-slider tr td .w-circle .plus:after {
+  width: 2px;
+  height: 10px;
+  left: 4px;
+  top: 0
+}
+.table-payment tr td .w-circle.light, .pay-slider tr td .w-circle.light {
+  background: #607d8b
+}
+.table-payment tr td .w-circle.dark, .pay-slider tr td .w-circle.dark {
+  background: #001451
+}
+.table-payment tr td .col-wrap, .pay-slider tr td .col-wrap {
+  display: block;
+  height: 100%;
+  background: #e8eef1
+}
+.table-payment tr td .col-wrap .col, .pay-slider tr td .col-wrap .col {
+  text-align: center;
+  margin-left: 33px;
+  margin-right: 33px
+}
+.table-payment tr td:first-child, .pay-slider tr td:first-child {
+  padding-left: 0
+}
+.table-payment tr td:first-child .col, .pay-slider tr td:first-child .col {
+  padding: 0 20px;
+  font-weight: 400
+}
+.table-payment tr td:first-child .col .help, .pay-slider tr td:first-child .col .help {
+  font-size: 17px;
+  line-height: 20px;
+  color: #001451
+}
+.table-payment tr td .col, .pay-slider tr td .col {
+  font-size: 25px;
+  color: #001451;
+  font-weight: 700;
+  height: 100%;
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid #d3dadd
+}
+.table-payment tr td .col .cur, .pay-slider tr td .col .cur {
+  vertical-align: text-top
+}
+.table-payment tr td .col .value, .pay-slider tr td .col .value {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 60px
+}
+.table-payment tr td .col strong, .pay-slider tr td .col strong {
+  font-weight: 700;
+  display: block
+}
+.table-payment tr td .gray-skin, .pay-slider tr td .gray-skin {
+  background-color: #e7edf1
+}
+.table-payment tr th, .pay-slider tr th {
+  padding: 0 16px;
+  height: 214px;
+  vertical-align: middle;
+  color: #fff
+}
+.table-payment tr th .blue-skin, .pay-slider tr th .blue-skin {
+  height: 100%;
+  background: #23a5e1;
+  -moz-border-radius: 8px 8px 0 0;
+  -webkit-border-radius: 8px;
+  border-radius: 8px 8px 0 0
+}
+.table-payment tr th .blue-skin .help, .pay-slider tr th .blue-skin .help {
+  color: #fff
+}
+.table-payment tr th .blue-skin .help .title, .pay-slider tr th .blue-skin .help .title {
+  font-size: 30px;
+  font-weight: 700;
+  display: block;
+  padding: 5px 10px
+}

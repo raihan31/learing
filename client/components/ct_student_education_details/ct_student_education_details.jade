@@ -1,0 +1,28 @@
+ul.education-details(ng-repeat='education in studentEducations')
+  li
+    .col-sm-12
+      h6
+        span.col-sm-6 Institution name
+        | : {{education.current_institution}}
+      h6
+        span.col-sm-6 Degree name
+        | : {{education.degree_name}}
+      h6
+        span.col-sm-6 Passing Year
+        | : {{education.passing_year}}
+      h6
+        span.col-sm-6 Group
+        | : {{education.major}}
+      h6
+        span.col-sm-6 Cgpa
+        | : {{education.gpa}}
+      h6
+        span.col-sm-6 Status
+        | : {{education.status == "On-going" ? 'Continuing' : 'Complete'}}
+    .col-sm-3.col-sm-offset-3.col-md-2.col-md-offset-2
+      //button.btn.btn-education-details(ng-click='') Edit
+      //i.fa.fa-trash-o(ng-click='EducationDelete(education.id)')
+    .col-sm-5.col-sm-offset-5.col-md-4.col-md-offset-4
+      //button.btn.btn-education-details(ng-click='EducationDelete(education.id)') Edit
+      button.btn.btn-education-details(ng-click='EducationDelete(education.id)') Delete
+      //i.fa.fa-trash-o(ng-click='EducationDelete(education.id)')

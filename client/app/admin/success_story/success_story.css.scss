@@ -1,0 +1,46 @@
+.index-view-image {
+  max-width: 32px;
+}
+
+.social-network-item {
+  border: solid 1px #cccfcf;
+  max-width: 400px;
+  margin: auto 10px 10px auto;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  min-width: 300px;
+}
+
+.remove-social-network {
+  color: #EDA033;
+  font-size: 22px;
+  position: absolute;
+  right: -10px;
+  top: -12px;
+  &:hover {
+    color: #C63632;
+  }
+}
+
+.social-link {
+  margin-right: 7px;
+  display: inline-block;
+}
+
+.preview-wrapper {
+  margin-top: 10px;
+  .preview-image {
+    width: 150px;
+    height: 150px;
+    float: left;
+  }
+}
+
+.actions {
+  min-width: 100px;
+  a {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}

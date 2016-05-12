@@ -1,0 +1,12 @@
+section.section-step
+  .container
+    header.row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        h3 SELECT YOUR CLASS
+        p 
+          | Here you can see all the classes that that will be held for the course you have selected
+    article
+      .row
+        .col-xs-12.col-sm-6.col-md-4.col-lg-3(ng-repeat="batch in batches" ct-select-pane-text pane-data="batch")
+    ct-signup-next-step-btn(ng-show="isSelected()" state="'select_batch'")
+        

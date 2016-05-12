@@ -1,0 +1,103 @@
+
+
+[class^="ct-icon-"], [class*=" ct-icon-"] {
+	font-family: 'ct-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ct-icon-marker:before {
+	content: "\e904";
+}
+.ct-icon-email:before {
+	content: "\e900";
+}
+.ct-icon-lock:before {
+	content: "\e901";
+}
+.ct-icon-phone:before {
+	content: "\e902";
+}
+.ct-icon-profile:before {
+	content: "\e903";
+}
+.ct-icon-place:before {
+	content: "\e801";
+}
+.ct-icon-editor:before {
+	content: "\e802";
+}
+.ct-icon-enter:before {
+	content: "\e800";
+}
+.ct-icon-arrow-down:before {
+	content: "\e610";
+}
+.ct-icon-clock:before {
+	content: "\e60e";
+}
+.ct-icon-check:before {
+	content: "\e60f";
+}
+.ct-icon-ct-logo-small:before {
+	content: "\e600";
+}
+.ct-icon-ct-logo:before {
+	content: "\e601";
+}
+.ct-icon-upwork:before {
+	content: "\e602";
+}
+.ct-icon-android:before {
+	content: "\e603";
+}
+.ct-icon-rails:before {
+	content: "\e604";
+}
+.ct-icon-php:before {
+	content: "\e605";
+}
+.ct-icon-js:before {
+	content: "\e606";
+}
+.ct-icon-html5:before {
+	content: "\e607";
+}
+.ct-icon-css3:before {
+	content: "\e608";
+}
+.ct-icon-tw:before {
+	content: "\e609";
+}
+.ct-icon-fb:before {
+	content: "\e60a";
+}
+.ct-icon-Google:before {
+	content: "\e60b";
+}
+.ct-icon-pinterest:before {
+	content: "\e60c";
+}
+.ct-icon-instagram:before {
+	content: "\e60d";
+}
+
+[class*="w-icon"].w-paid-white-icon {
+  background-image: url("#{$img-path}/paid-white-icon.png");
+  width: 120px;
+  height: 83px
+}
+
+[class*="w-icon"].w-deposit-white-icon {
+  background-image: url("#{$img-path}/deposit-white-icon.png");
+  width: 88px;
+  height: 90px
+}

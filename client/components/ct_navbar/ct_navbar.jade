@@ -1,0 +1,37 @@
+nav.navbar.navbar-default.navbar-fixed-top.ct-navbar
+  .container
+    // Brand and toggle get grouped for better mobile display
+    .navbar-header
+      button.navbar-toggle.collapsed.toggle-button(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false',ng-init='isCollapse= true',ng-click ='isCollapse = !isCollapse')
+        span.sr-only Toggle navigation
+        i.fa.fa-bars
+      a.navbar-brand(href='/')
+        i.ct-icon.ct-icon-ct-logo
+    .collapse.navbar-collapse(uib-collapse='isCollapse')
+      ul.nav.navbar-nav.navbar-nav-ct.navbar-small-device
+        li(ng-repeat="item in menuItems", ng-class="{active: item.active}")
+          div(ng-if='!item.subMenu && !item.subMenu.length')
+            a(href='{{item.href}}', uib-dropdown-toggle, id='{{item.name}}', target="{{item.target}}")
+              | {{item.name}}
+          div(uib-dropdown, ng-if='item.subMenu && item.subMenu.length' )
+            a(href='',uib-dropdown-toggle,id='{{item.name}}')
+              | {{item.name}}
+            ul(uib-dropdown-menu role="menu" aria-labelledby="{{item.name}}")
+              li(role='menuitem' ng-repeat='subMenu in item.subMenu',ng-class="{active: subMenu.active}")
+                a(href="{{subMenu.link}}" target="{{subMenu.target}}") {{subMenu.name}}
+        
+      ul.nav.navbar-nav.navbar-nav-ct.pull-right.navbar-small-device
+        li
+          a(href='' ng-click="openSignup()") Sign Up
+        li
+          a(href='/signin') Sign In
+      ul.nav.navbar-nav.navbar-social.navbar-right.navbar-small-device.social-small-device
+        li(ng-repeat="socNav in socialNetworkNavs")
+          a(ng-href="{{socNav.url}}" target="_blank")
+            i(class="{{socNav.iconClass}}")
+      //- ul.nav.navbar-nav.navbar-utility
+      //-   li
+      //-     span It's free
+      //-     a(href='/signup') Get started
+      .nav-divider.pull-right
+        

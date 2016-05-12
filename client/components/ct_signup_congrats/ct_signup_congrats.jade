@@ -1,0 +1,22 @@
+section.section-step
+  .container
+    header.row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        h2 Congratulations
+        h3 We received your application
+    //-     p 
+    //-       | Here is the summary of your selections:
+    //- //- article
+    //- //-   .row
+    //- //-     //- .col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-lg-4.col-lg-offset-0(ct-select-pane-large pane-data="learningCenter" prevent-click)
+    //- //-     //-   
+    //- //-     //- .col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-lg-4.col-lg-offset-0(ng-click="prevent()" ct-select-pane pane-data="course" prevent-click)
+    //- //-     //- .col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-lg-4.col-lg-offset-0(ng-click="prevent()" ct-select-pane-text pane-data="educationModel" prevent-click)
+    header.row(ng-show="learningCenter.description")
+      .col-xs-12.col-lg-8.col-lg-offset-2(ng-bind-html="learningCenter.description")
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        p.text-align-center
+          a.btn.btn-danger(ng-click="resetApplication()")
+            | New Application
+          br
+          br

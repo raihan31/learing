@@ -1,0 +1,35 @@
+header(class="hero-unit {{data.className}}" ng-background-image background-url="data.url")
+  .container.align-children-bottom
+    .dib
+      h2(ng-bind-html="data.title")
+      p(ng-bind-html="data.description")
+      div(ng-show="enrolled")
+        br
+        a.click-me.btn.btn-primary
+          | Show selections
+        | &nbsp;
+        a.btn.btn-success(ng-click="showInstructions()")
+          | Show instructions
+        | &nbsp;
+        a.btn.btn-danger(ng-click="resetApplication()")
+          | New Application
+    .buttons(ng-hide="enrolled")
+      a.click-me.btn.btn-success(ng-show="showScroll()")
+        | I want to enroll!
+      a.btn.btn-danger(ng-click="resetApplication()" ng-show="!showScroll()")
+        | Reset Application
+
+//- header.hero-unit.section-step
+//-     
+//-   //- .scroll(ng-show="showScroll()")
+//-   //-   i.ct-icon-arrow-down.arrow-0
+//-   //-   i.ct-icon-arrow-down.arrow-1
+//-   //-   i.ct-icon-arrow-down.arrow-2
+//-   //-   i.ct-icon-arrow-down.arrow-3
+//-   .container.align-children-middle
+//-     .dib
+//-       h2 YOUR CAREER START NOW
+//-       p Complete 5 easy steps to enrol with CodersTrust
+//-       br
+//-       a.click-me.btn.btn-success(ng-show="showScroll()")
+//-         | I want to enroll!

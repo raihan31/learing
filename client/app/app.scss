@@ -1,0 +1,556 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+$fonts-path: "/assets/fonts";
+$img-path: "/assets/images";
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic|Ubuntu:400,500,700|Oxygen:400,700);
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+@font-face {
+    font-family: 'ct-icons';
+    src:url('#{$fonts-path}/icomoon.eot?dj9nhk');
+    src:url('#{$fonts-path}/icomoon.eot?#iefixdj9nhk') format('embedded-opentype'),
+    url('#{$fonts-path}/icomoon.ttf?dj9nhk') format('truetype'),
+    url('#{$fonts-path}/icomoon.woff?dj9nhk') format('woff'),
+    url('#{$fonts-path}/icomoon.svg?dj9nhk#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body,
+.application-container {
+    height: 100%;
+    min-height: 100%;
+    // height: auto !important;
+}
+
+.application-container {
+    position: relative;
+}
+
+body {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+@media (min-width: $screen-md-min) {
+    .col-md-offset-15 {
+        margin-left: 12.499995%;
+    }
+    .col-md-offset-25 {
+        margin-left: 20.833335%;
+    }
+    .col-md-offset-45 {
+        margin-left: 37.499985%;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .col-lg-offset-15 {
+        margin-left: 12.499995%;
+    }
+    .col-lg-offset-45 {
+        margin-left: 37.499985%;
+    }
+}
+
+// Component styles are injected through grunt
+// injector
+@import '_mixin.scss';
+@import '_variables.scss';
+@import 'account/login/login.scss';
+@import 'admin/admin.scss';
+@import 'admin/course/course.scss';
+@import 'admin/mentor/mentor.css.scss';
+@import 'admin/office/office.scss';
+@import 'admin/success_story/success_story.css.scss';
+@import 'admin/up_work/upwork.scss';
+@import 'ct-icons.scss';
+@import 'hourofcode/events/events.scss';
+@import 'hourofcode/home/home.scss';
+@import 'hourofcode/location/location.scss';
+@import 'refactor.scss';
+@import 'student/learning/course/course.scss';
+@import 'student/learning/courses/courses.scss';
+@import 'student/learning/learning.scss';
+@import 'student/learning/onlinetest/onlinetest.scss';
+@import 'student/login/login.scss';
+@import 'student/me/about/about.scss';
+@import 'student/me/referral/referral.scss';
+@import 'student/me/subscription/subscription.scss';
+@import 'student/me/subscriptions/subscriptions.scss';
+@import 'student/student.scss';
+@import 'website/about/about.scss';
+@import 'website/earn/earn.scss';
+@import 'website/finance/finance.scss';
+@import 'website/home/home.scss';
+@import 'website/learning/learning.scss';
+@import 'breadcrumb/breadcrumb.scss';
+@import 'ct_course_accordion/ct_course_accordion.scss';
+@import 'ct_course_list_item/ct_course_list_item.scss';
+@import 'ct_floating_nav/ct_floating_nav.scss';
+@import 'ct_footer_student/ct_footer_student.scss';
+@import 'ct_hero/ct_hero.scss';
+@import 'ct_learning_path_item/ct_learning_path_item.scss';
+@import 'ct_navbar/ct_navbar.scss';
+@import 'ct_navbar_student/ct_navbar_student.scss';
+@import 'ct_office_address/ct_office_address.scss';
+@import 'ct_online_test_questions/ct_online_test_questions.scss';
+@import 'ct_progress_circle/ct_progress_circle.scss';
+@import 'ct_project_list_item/ct_project_list_item.scss';
+@import 'ct_referral_link/ct_referral_link.scss';
+@import 'ct_signup/ct_signup.scss';
+@import 'ct_student_course_lesson/ct_student_course_lesson.scss';
+@import 'ct_student_education_details/ct_student_education_details.scss';
+@import 'ct_student_education_modal/ct_student_education.scss';
+@import 'ct_student_hero/ct_student_hero.scss';
+@import 'ct_student_profile/ct_student_profile.scss';
+@import 'ct_team_member/ct_team_member.scss';
+@import 'ct_track_pane/ct_track_pane.scss';
+@import 'modal/modal.scss';
+@import 'navbar/navbar.scss';
+@import 'signup.educationModel/education_model.scss';
+@import 'signup.intro/signup.intro.scss';
+@import 'signup.navigation/signup.navigation.scss';
+@import 'signup.nextStep/signup.nextStep.scss';
+@import 'signup.personalData/ct_personal_data.scss';
+@import 'signup.selectLearningCenter/learning_center.scss';
+// endinjector
+.clear {
+    clear: both;
+}
+
+h1,
+h2 {
+    span {
+        display: inline-block;
+        background-color: $light-blue-color;
+        padding: 0 4px;
+        height: 55px;
+        line-height: 1;
+    }
+}
+
+h1 {
+    @include ssp-h1-bold;
+}
+
+h2 {
+    @include ssp-h2-bold;
+    span {
+        height: 45px;
+    }
+}
+
+h3 {
+    @include ssp-h3-bold;
+}
+
+h4 {
+    @include ssp-h4-bold;
+}
+
+h5 {
+    @include ssp-h5-bold;
+}
+
+h6 {
+    @include ssp-h6-bold;
+}
+
+.alert,
+p {
+    @include ssp-regular($fW: "normal");
+}
+
+a {
+    &:hover,
+    &.active {
+        color: $w-current-link-color;
+        text-decoration: none;
+    }
+    &.link-with-icon {
+        i {
+            font-size: 18px;
+            float: left;
+        }
+        i + .text {
+            display: block;
+            line-height: 18px;
+            margin-left: 28px;
+        }
+        &:after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+    }
+    @include ssp-regular;
+}
+
+.alert {
+    text-transform: uppercase;
+}
+
+.icon-circle-progress {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 150px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid $ui-light-grey-color;
+    .icon-circle-progress-current {
+        background-color: $ui-blue-color;
+        width: 0%;
+        height: 0%;
+        &.icon-circle-progress-current-100 {
+            width: 24px;
+            height: 24px;
+        }
+        &.icon-circle-progress-current-25 {
+            width: 12px;
+            height: 12px;
+        }
+        &.icon-circle-progress-current-50 {
+            width: 12px;
+            height: 24px;
+        }
+        &.icon-circle-progress-current-75 {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            &:after {
+                content: "";
+                background-color: #fff;
+                width: 13px;
+                height: 11px;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: inherit;
+    box-shadow: inherit;
+    outline: 0 none;
+}
+
+.form-group {
+    label {
+        @include ssp-regular($size: "14px");
+        color: $ct-blue-color;
+    }
+    .input-group .input-group-addon,
+    input:not([type="submit"]),
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"] {
+        border-top-width: 0;
+        border-left-width: 0;
+        border-right-width: 0;
+        border-bottom: 1px solid $blue-grey-color;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+        @include ssp-regular($size: "20px", $fW: "300", $lH: "1");
+        padding-bottom: 15px;
+        padding-top: 15px;
+        height: 53px;
+        &::-webkit-input-placeholder,
+        &:-moz-placeholder,
+        &:-ms-input-placeholder {
+            line-height: 22px;
+        }
+    }
+    .help-block {
+        @include ssp-regular($size: "13px", $fW: "300", $lH: "1");
+        padding: 10px 0 0 56px;
+    }
+}
+
+.btn {
+    @include ssp-regular($size: "16px", $fW: "600", $lH: "1");
+    text-transform: uppercase;
+    height: 52px;
+    padding: 17px 43px;
+    &.btn-edit {
+        color: $light-blue-color;
+        display: inline-block;
+        padding: 0;
+        height: auto;
+        span {
+            padding-left: 10px;
+        }
+        .fa {
+            border: 1px solid $light-blue-color;
+            border-radius: 50%;
+            // display: block;
+            padding: 5px;
+            height: 22px;
+            width: 22px;
+            font-size: 12px;
+            line-height: 1;
+        }
+    }
+    &.btn-regular {
+        font-size: 14px;
+        text-transform: none;
+        padding: 10px 15px;
+        height: auto;
+        i {
+            font-size: 20px;
+            float: left;
+            & + .text {
+                margin-left: 30px;
+                line-height: 20px;
+            }
+        }
+        &:after {
+            content: " ";
+            clear: both;
+        }
+        & + .btn-regular {
+            margin-left: 15px;
+        }
+    }
+    &.btn-small {
+        height: auto;
+        padding: 10px 15px;
+    }
+    &.btn-success {
+        border-color: $green-color;
+        background: $green-color;
+        color: $white;
+    }
+    &.btn-default {
+        color: $white;
+        border-color: $white;
+        border-width: 2px;
+        background-color: transparent;
+    }
+    &.btn-linkedin {
+        color: $white;
+        border-color: #007ab5;
+        background-color: #007ab5;
+    }
+    &.btn-google {
+        color: $white;
+        border-color: #db4437;
+        background-color: #db4437;
+    }
+    &.btn-facebook {
+        color: $white;
+        border-color: #4867aa;
+        background-color: #4867aa;
+    }
+    &.btn-primary {
+        color: $white;
+        border-color: $light-blue-color;
+        background-color: $light-blue-color;
+    }
+    &.btn-dark-blue {
+        color: $white;
+        border-color: $dark-blue-color;
+        background-color: $dark-blue-color;
+    }
+    &.btn-danger {
+        background: $ui-red-color;
+        color: $white;
+    }
+    &.btn-counter {
+        position: relative;
+        .counter {
+            background-color: $white;
+            box-shadow: 0 0 10px transparentize($blue-color, .5);
+            border-radius: 50%;
+            display: block;
+            width: 52px;
+            height: 52px;
+            position: absolute;
+            top: 0;
+            left: -26px;
+            font-size: 30px;
+            color: $blue-color;
+            line-height: 51px;
+        }
+    }
+}
+
+.btn-tab {
+    box-sizing: content-box;
+    width: 100%;
+    padding: 0;
+}
+
+.section-step {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 100px;
+    &:not(.hero-unit) {
+        padding-top: 80px;
+    }
+    .container {
+        height: 100%;
+    }
+    header {
+        text-align: center;
+        h3 {
+            margin: 65px 0 20px;
+        }
+        h2,
+        h3,
+        p {
+            color: $blue-color;
+        }
+        p {
+            color: $asphalt-color;
+        }
+        @media (max-width: $screen-sm-max) {
+            text-align: left;
+            p {}
+        }
+    }
+    article {
+        margin-top: 30px;
+    }
+}
+
+.relative-container {
+    position: relative;
+}
+
+.align-children-bottom,
+.align-children-middle {
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        visibility: hidden;
+        vertical-align: middle;
+        width: 1px !important;
+    }
+    & > * {
+        vertical-align: middle;
+        display: inline-block;
+    }
+    &.align-children-bottom {
+        &:after {
+            vertical-align: bottom;
+        }
+        & > * {
+            vertical-align: bottom;
+        }
+    }
+    @media (max-width: $screen-xs-max) {
+        & > * {
+            max-width: 98%;
+        }
+    }
+}
+
+.slick-initialized .slick-slide:focus {
+    outline: none;
+}
+
+.column-50 {
+    width: 45%;
+    margin-left: 5%;
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.alert {
+    border-radius: 0;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    &.alert-green {
+        color: $white;
+        background-color: $green-color;
+    }
+    &.alert-orange {
+        color: $white;
+        background-color: $orange-color;
+    }
+    i {
+        font-size: 20px;
+        float: left;
+    }
+    i + .text {
+        text-align: left;
+        line-height: 20px;
+        margin-left: 30px;
+    }
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+form {
+    &.form-stacked-label {
+        .form-group {
+            margin-top: 20px;
+            &:first-child {
+                margin-top: 0;
+            }
+            label {
+                color: $label-color;
+                @include ssp-regular($size: "11px", $fW: "bold", $lH: "1");
+                letter-spacing: 0.3px;
+                text-transform: uppercase;
+                display: block;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            input:not([type="button"]) {
+                color: $blue-color;
+                @include ssp-regular($size: "20px", $fW: "400", $lH: "1");
+                display: block;
+                padding: 8px 15px;
+                height: 42px;
+                width: 100%;
+                border: 1px solid $label-color;
+            }
+        }
+    }
+}

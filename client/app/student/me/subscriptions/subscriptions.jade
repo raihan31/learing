@@ -1,0 +1,44 @@
+.container.student-about.subscriptions
+  .row
+    .col-xs-12
+      div(ncy-breadcrumb)
+  .row
+    .col-xs-12
+      h5 Your Subscriptions
+      
+      table.table.table-hover.table-subscriptions
+        tr
+          th number
+          th batch
+          th course 
+          th education model
+          th course fee
+          th security deposit
+          th paid amount
+          th Payment
+          th Action
+          
+        tr(ng-repeat="item in subscriptions")
+          td.cell-number {{item.id}}
+          td.cell-batch {{item.student_batch}}
+          td.cell-course 
+            a(ui-sref="student.learning.course({id: item.course.id})") {{item.course_name}}
+          td.cell-education {{item.educationModel}}
+          td.cell-fee 
+            | $ 
+            strong {{item.course_fee}}
+          td.cell-deposit 
+            | $ 
+            strong {{item.security_deposit}}
+          td.cell-paid 
+            | $ 
+            strong {{item.paid_amount}}
+          td.cell-actions(ui-sref="student.me.subscription.payment({id: item.id})")
+            a.btn.btn-edit
+              i.fa.fa-usd
+              span Pay
+          td
+            a.btn.btn-edit(ui-sref="student.me.subscription({id: item.id})")
+              i.fa.fa-info-circle
+              span Details
+          

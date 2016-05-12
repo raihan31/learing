@@ -1,0 +1,39 @@
+.container
+  .row
+    .col-xs-12
+      h1 Customer Reviews
+      table.table
+        thead
+          tr
+            th Name
+            th Designation
+            th Review
+            th Actions
+        tbody
+          tr(ng-repeat='review in customerReviews', ng-show="review._id")
+            td {{review.name}}
+            td {{review.designation}}
+            td {{review.review}}
+            td
+              a(ng-href='#', ng-click='editCustomerReview(review._id)') Edit |
+              a(ng-href='#', ng-click='removeCustomerReview(review._id)') Delete
+  .row
+    .col-xs-12
+      a(ng-click="toggleNewForm()", ng-href='#').btn.btn-primary {{addCustomerReviewText}}
+      form.form(name='form', novalidate='', ng-show="newFormVisible")
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', ng-model='customerReview.name', focus-input-on='{{newFormVisible}}')
+          p.help-block(ng-show='form.name.$error.required && submitted') Name is required
+        .form-group
+          label Designation
+          input.form-control(type='text', name='designation', ng-model='customerReview.designation')
+        .form-group
+          label Review
+          textarea.form-control(name='review', ng-model='customerReview.review')
+        div.pull-right
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createCustomerReview()' ng-show='createReview')
+            | Create Customer Review
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updateCustomerReview(customerReview._id)' ng-hide='createReview')
+            | Update Customer Review
+

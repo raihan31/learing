@@ -1,0 +1,6 @@
+header(class="hero-unit {{data.className}}" ng-background-image background-url="data.url")
+  .container.align-children-middle()
+    .dib
+      h1(ng-bind-html="data.title")
+      p(ng-bind-html="data.description")
+      ng-transclude

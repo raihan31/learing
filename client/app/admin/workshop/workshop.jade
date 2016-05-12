@@ -1,0 +1,46 @@
+.container
+  .row
+    .col-xs-12
+      h1 WorkShop
+      table.table
+        thead
+          tr
+            th Name
+            th Description
+            th Image
+            th Date
+            th Actions
+        tbody
+          tr(ng-repeat='workshop in workshops track by $index', ng-show="workshop")
+            td {{workshop.name}}
+            td {{workshop.description}}
+            td
+              img(ng-src='{{workshop.image.original.url}}').index-view-image
+            td {{workshop.createdAt}}
+            td.actions
+              a(ng-href='#' class='btn-sm btn-warning' ng-click='editWorkshop(workshop._id)')
+                i.fa.fa-pencil
+              a(ng-href='#' class='btn-sm btn-danger' ng-click='removeWorkshop(workshop._id)')
+                i.fa.fa-times
+  .row
+    .col-xs-12
+      a(ng-click="toggleNewForm()", ng-href='#').btn.btn-primary {{addWorkshopText}}
+      form.form(name='form', novalidate='', ng-show="newFormVisible")
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', ng-model='workshop.name', focus-input-on='{{newFormVisible}}')
+          p.help-block(ng-show='form.name.$error.required && submitted') Name is required
+        .form-group
+          label Description
+          input.form-control(type='text', name='designation', ng-model='workshop.description')
+        .form-group
+          a.btn.btn-primary(name='workshop_image', ng-model='workshop_image', ngf-select="setWorkshopImage($file, $invalidFiles)" accept="image/*" ngf-max-size="1MB") Select Workshop Image
+          div.preview-wrapper
+            p(ng-show='errorMsg').alert.alert-danger {{errorMsg}}
+            img(src='{{workshop.image.original.url}}' ngf-thumbnail="workshop_image" ng-show='workshop.image || workshop_image').preview-image
+        div.pull-right
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createWorkshop()' ng-hide='isEdit')
+            | Create Workshop
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updateWorkshop(workshop._id)' ng-show='isEdit')
+            | Update Workshop
+

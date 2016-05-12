@@ -1,0 +1,25 @@
+nav.navbar.navbar-default.navbar-fixed-top.ct-navbar.ct-navbar-student
+  .container
+    // Brand and toggle get grouped for better mobile display
+    .row
+      .col-xs-12
+        .navbar-header
+          a.navbar-brand(href='/')
+            i.ct-icon.ct-icon-ct-logo
+            // .hidden-sm.hidden-xs
+            // i.ct-icon.ct-icon-ct-logo-small.hidden-md.hidden-lg
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-nav-ct.navbar-left(is-student-login)
+            li(ng-repeat="item in menuItems" ui-sref-active="active")
+              a(href ui-sref="{{item.uiSref}}")
+                i(class="{{item.iconClass}}")
+                | {{item.name}}
+          ul.nav.navbar-nav.navbar-nav-ct.navbar-right
+            li(is-student-login)
+              a.btn.btn-primary.btn-small(href ui-sref="student.me.referral")
+                | Invite a friend
+            li(is-student-login)
+              a(ui-sref="student.logout")
+                i(class="fa fa-power-off")
+                | Logout
+

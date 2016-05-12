@@ -1,0 +1,90 @@
+$barColor: $light-blue-color;
+$overlayColor: $blue-color;
+$backColor: #2f3439;
+
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+.progress-radial {
+  float: left;
+  margin-right: 30px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  // border: 2px solid $backColor; // remove gradient color
+  // background-color: $barColor; // default 100%
+}
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+.progress-radial .overlay {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: $overlayColor;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 19px;
+  font-size: 16px;
+  padding: 23px 5px 0;
+  text-transform: uppercase;
+}
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+
+$step: 1;
+
+$loops-minutes: round(60 / $step);
+$increment-minutes: 360 / $loops-minutes;
+$half-minutes: round($loops-minutes / 2);
+
+@for $i from 0 through $loops-minutes {
+  .progress-minutes-#{$i*$step} {
+    @if $i < $half-minutes {
+      $nextdeg: 90deg + ( $increment-minutes * $i );
+      background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, $backColor 50%, $backColor);
+    }
+    @else {
+      $nextdeg: -90deg + ( $increment-minutes * ( $i - $half-minutes ) );
+      background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+    }
+  }
+}
+
+$loops-days: round(30 / $step);
+$increment-days: 360 / $loops-days;
+$half-days: round($loops-days / 2);
+
+@for $i from 0 through $loops-days {
+  .progress-days-#{$i*$step} {
+    @if $i < $half-days {
+      $nextdeg: 90deg + ( $increment-days * $i );
+      background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, $backColor 50%, $backColor);
+    }
+    @else {
+      $nextdeg: -90deg + ( $increment-days * ( $i - $half-days ) );
+      background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+    }
+  }
+}
+
+$loops-hours: round(24 / $step);
+$increment-hours: 360 / $loops-hours;
+$half-hours: round($loops-hours / 2);
+
+@for $i from 0 through $loops-hours {
+  .progress-hours-#{$i*$step} {
+    @if $i < $half-hours {
+      $nextdeg: 90deg + ( $increment-hours * $i );
+      background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, $backColor 50%, $backColor);
+    }
+    @else {
+      $nextdeg: -90deg + ( $increment-hours * ( $i - $half-hours ) );
+      background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+    }
+  }
+}

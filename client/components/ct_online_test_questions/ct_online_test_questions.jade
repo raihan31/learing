@@ -1,0 +1,18 @@
+.col-xs-7
+  .slide-frame
+    h4 Questions # {{noOfQuestions+1}} of {{questions.length}}
+    .wave
+      h6 {{questions[noOfQuestions].description}}
+        ul
+          li(ng-repeat="answer in questions[noOfQuestions].answers")
+            .form-group
+              label(for="{{answer.id}}")
+                input(type="radio" value="{{answer.id}}" id="{{answer.id}}" name="adioAnswer" ng-click="answerCheck(checkedAnswer)" ng-model="checkedAnswer")
+                |	{{answer.description}}
+          button.btn.btn-success(ng-click="questionsSubmission(questions[noOfQuestions], checkedAnswer)" ng-disabled="!submissionButtonDisabled")	{{buttonText}}
+.col-xs-3
+  h5 Time Left
+  div(round-progress max="max" current="current" color="#45ccce" bgcolor="#eaeaea" radius="100" stroke="20" rounded="true" clockwise="true" responsive="false" animation="easeInOutQuart" animation-delay="0")
+  h2(style="color:black") {{parseInt((estimatedTime/60)/60)+':'+parseInt(estimatedTime/60)%60+':'+ estimatedTime%60}}
+.col-xs-2
+  ct-student-profile(student-data="studentData")

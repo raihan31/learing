@@ -1,0 +1,160 @@
+.hour-of-code
+  ct-hero(hero-data="heroData")
+    timer.countdown(end-time="endDate" interval="1000")
+      .progress-radial(class="progress-days-{{days}}")
+        .overlay 
+          span day{{daysS}}
+          br
+          strong {{days}}
+      .progress-radial(class="progress-hours-{{hours}}")
+        .overlay 
+          span hour{{hoursS}}
+          br
+          strong {{hours}}
+      .progress-radial(class="progress-minutes-{{minutes}}")
+        .overlay 
+          span MINUTE{{minutesS}}
+          br
+          strong {{minutes}}
+      .progress-radial(class="progress-minutes-{{seconds}}")
+        .overlay 
+          span SECOND{{secondsS}}
+          br
+          strong {{seconds}}
+    .event-date
+      i.fa-calendar.fa
+      .days
+        .day 
+          | 7
+          sup th
+        | &nbsp;-&nbsp;
+        .day 
+          | 13
+          sup th
+        .month
+          | December
+      .year
+        | 2015
+    .join-wrapper
+      a.btn.btn-primary(href="/hourofcode/location") JOIN
+      .text 
+        strong 180 000 000
+        | Other Participants
+  .container.celebs
+    .row
+      .col-xs-12.col-md-2.col-sm-3.text-center(ng-repeat="celeb in celebs" ng-class="{'col-md-offset-1': $index == 0}")
+        ct-person-block( member-data="celeb")
+    .row
+      .col-xs-12.col-md-10.col-md-offset-1.text-center
+        h2 
+          | What do all of them have in common you ask? 
+          br
+          strong They are all participating in
+          br
+          span THE HOUR OF CODE!
+  .blue-rect.video
+    .container
+      .row
+        .col-xs-12.col-md-8.col-md-offset-2
+          a.hoc-logo(href="https://code.org" target="_blank")
+          iframe(width='100%', height='400', src='https://www.youtube.com/embed/2DxWIxec6yo', frameborder='0', allowfullscreen='')
+      .row
+        .col-xs-12.section-header.finance-section-header
+          h1
+            | THE HOUR OF CODE
+            br
+            | IN BANGLADESH, INDIA, & KENYA
+          .text
+            br
+            p 
+              | is almost here and we are the lucky ones to be a big part of it.
+              br
+              | CodersTrust is proud to bring you the 
+              strong largest learning event in the world:
+      .row.stickers 
+        .col-xs-12.col-md-3.col-sm-4.col-md-offset-15
+          .stick
+            .w-circle.w-circle-light
+              .w-icon.w-house-icon
+            p
+              | in our office
+        .col-xs-12.col-md-3.col-sm-4
+          .stick
+            .w-circle.w-circle-light
+              .w-icon.w-person-icon
+            p
+              | in our partnering institutions
+        .col-xs-12.col-md-3.col-sm-4
+          .stick
+            .w-circle.w-circle-light
+              .w-icon.w-pc-icon
+            p
+              | Online
+      .row
+        .col-xs-12.section-header.finance-section-header
+          .text
+            br
+            p 
+              strong
+                | Join us in an engaging and free one hour introduction to knowledge
+                br
+                | that opens you to a world of amazing career opportunities
+      .row
+        .col-xs-12.col-md-6.col-md-offset-3.text-center
+          a.btn.btn-primary(href="/hourofcode/location")
+            | Join Millions
+          a.btn.btn-primary(href="https://www.facebook.com/events/1521867341466880/" target="blank")
+            i.fa.fa-facebook
+            | &nbsp;Join Event
+            
+  .container
+    .row
+      .col-xs-12.col-md-5.celeb-quote(ng-repeat="member in memberQuotes" ng-class="{'col-md-offset-1': $index != 0}")
+        ct-person-block(member-data="member")
+        blockquote {{member.quote}}
+  .how-to-join
+    .container 
+      .row
+        .col-xs-12.col-sm-6.section-header
+          h1 HOW?
+          .text
+            p 
+              | Book a time or join us online.
+              br
+              | Also, join our Facebook group
+              br
+              | for latest news and updates on the event
+          .event-date
+            i.fa-calendar.fa
+            .days
+              .day 
+                | 7
+                sup th
+              | &nbsp;-&nbsp;
+              .day 
+                | 13
+                sup th
+              .month
+                | December
+            .year
+              | 2015
+        .col-xs-12.col-sm-6
+          a.btn.btn-primary.btn-counter(href="/hourofcode/location")
+            span.counter 1
+            | Book a time
+          br
+          a.btn.btn-primary.btn-counter(href="https://www.facebook.com/events/1521867341466880/" target="_blank")
+            span.counter 2
+            | Join our FB event
+          br
+          a.btn.btn-primary.btn-counter.two-lines(href="/hourofcode/location")
+            span.counter 3
+            | Show Up & Learn 
+            br
+            | How to Code in One Hour
+  .container.partners
+    .row
+      .col-xs-12.section-header
+        h2 OUR PARTNERS
+      .col-xs-12.text-center
+        img(ng-repeat="partner in partners" ng-src="{{partner}}")

@@ -1,0 +1,146 @@
+.course-list-item {
+  position: relative;
+  header {
+    svg {
+      display: inline-block;
+      height: 51px;
+      max-width: auto;
+      vertical-align: bottom;
+      path {
+        fill: $lighter-grey-color;
+      }
+    }
+    img {
+      width: 60px;
+    }
+    .enrolled-students {
+
+      i {
+        color: $lighter-grey-color;
+        font-size: 23px;
+
+        float: left;
+      }
+
+      .text {
+        margin-left: 20px;
+
+        color: $lighter-grey-color;
+        font-size: 13px;
+        line-height: 24px;
+      }
+    }
+
+    &:after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+
+  article {
+    h4 {
+      color: $blue-color;
+      font-size: 20px;
+      margin-top: 25px;
+    }
+    .course-progress {
+      .label {
+        color: $lighter-grey-color;
+        font-size: 13px;
+      }
+
+      &:after {
+        clear: both;
+        content: "";
+        display: table;
+      }
+    }
+    .progress-ct-blue {
+      // .progress {
+      height: 7px;
+      background: #eeecea;
+      border-radius: 6px;
+      // }
+      .progress-bar {
+        background: linear-gradient(to right, #00dfff, #23a6e1);
+        border-radius: 6px;
+      }
+    }
+
+    .description {
+      @mixin description {
+        color: $blue-color;
+        font-size: 15px;
+        line-height: 25px;
+      }
+
+      @include description;
+      margin-bottom: 20px;
+      padding-bottom: 11px;
+
+      border-bottom: 1px solid #eeecea;
+
+      a, strong, em {
+        @include description;
+      }
+    }
+
+    .info {
+      .attribute {
+        .key {
+          font-size: 11px;
+        }
+        .value {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .alert {
+    margin: 20px 0 0;
+  }
+  &:hover {
+    cursor: pointer;
+    .view {
+      opacity: 1;
+      display: block;
+    }
+  }
+  .view {
+    background: transparentize($blue-color, .5);
+    transition: opacity .5s;
+
+    display: none;
+    opacity: 0;
+
+    height: 100%;
+    width: 100%;
+
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    a {
+      background: $white;
+      border-radius: 100px;
+      box-shadow: 0 0 13px rgba(0, 0, 0, .4);
+
+      height: 47px;
+      width: 47px;
+
+      color: $light-blue-color;
+      font-weight: 500;
+      line-height: 47px;
+      text-transform: uppercase;
+      text-align: center;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 20;
+
+      margin: -23.5px 0 0 -23.5px;
+    }
+  }
+}

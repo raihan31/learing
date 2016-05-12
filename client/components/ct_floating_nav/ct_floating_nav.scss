@@ -1,0 +1,60 @@
+@import "_variables";
+@import "_mixin";
+nav.ct-floating-nav {
+  border: 1px solid $ui-light-grey-color;
+  border-radius: 5px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+
+  width: 100%;
+  a {
+
+    display: block;
+    height: 50px;
+    padding: 19px 20px;
+
+    cursor: pointer;
+    border-bottom: 1px solid $ui-light-grey-color;
+
+    @include oxygen-h6-bold;
+    color: $ui-light-asphalt-color;
+    font-size: 15px;
+    line-height: 1;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &.active {
+      color: #fff;
+      background-color: $ui-light-asphalt-color;
+      position: relative;
+      &:first-child {
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+      &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0;
+
+          border-style: solid;
+          border-width: 10px 0 10px 13px;
+          border-color: transparent transparent transparent #8493a8;
+
+          position: absolute;
+          top: 15px;
+          right: -13px;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.signup-form{
+	.select-class {
+	  	border-top: 0px;
+	    border-left: 0px;
+	    border-right: 0px;
+	    border-bottom: 1px solid #607d8b;
+	    padding: 1px 12px 3px 12px;
+	    height: 48px;
+	    font-family: Source Sans Pro;
+    	font-size: 20px;
+    	color: #A5A1A1;
+  	}
+  	.input-group-addon {
+  		padding-bottom: 0 !important;
+	    padding-top: 0 !important;
+	    height: 48px !important;
+  	}
+  	.form-group input:not([type="submit"]), .form-group input[type="text"] {
+  		padding-bottom: 0;
+	    padding-top: 0;
+	    height: 48px;
+  	}
+}

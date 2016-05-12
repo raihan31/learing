@@ -1,0 +1,75 @@
+@import "_variables";
+@import "_mixin";
+
+.project-list-item {
+  border-radius: 5px;
+  border: 1px solid $ui-light-grey-color;
+
+  margin-bottom: 30px;
+
+  position: relative;
+
+  height: 202px;
+  width: 100%;
+
+
+  img {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .content {
+    margin: 0 101px 0 230px;
+    height: 200px;
+    width: auto;
+
+    h3 {
+      color: $ui-dark-asphalt-color;
+      margin: 24px 0 0;
+      font-size: 24px;
+    }
+
+    p {
+      color: $ui-medium-asphalt-color;
+      font-size: 15px;
+      margin-top: 19px;
+    }
+  }
+  .statistics {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70px;
+    border-left: 1px solid $ui-light-grey-color;
+
+    .item {
+      height: 50%;
+      text-align: center;
+
+      &:last-child {
+        border-top: 1px solid $ui-light-grey-color;
+      }
+
+      span {
+        @include ssp-regular($size: "15px");
+
+        display: inline-block;
+        color: $ui-medium-asphalt-color;
+        font-size: 15px;
+        width: 100%;
+      }
+      .ct-icon-enter {
+        font-size: 24px;
+        color: $ui-blue-color;
+        cursor: pointer;
+      }
+      .ct-icon-enter + span {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.container
+  .row
+    .col-xs-12
+      h1 Portfolio
+      table.table
+        thead
+          tr
+            th Name
+            th Sub Name
+            th URL
+            th Image
+            th Actions
+        tbody
+          tr(ng-repeat='portfolio in portfolios track by $index', ng-show="portfolio")
+            td {{portfolio.name}}
+            td {{portfolio.subName}}
+            td
+              a(ng-href='{{portfolio.url}}') {{portfolio.url}}
+            td
+              img(ng-src='{{portfolio.image.original.url}}').index-view-image
+            td.actions
+              a(ng-href='#' class='btn-sm btn-warning' ng-click='editPortfolio(portfolio._id)')
+                i.fa.fa-pencil
+              a(ng-href='#' class='btn-sm btn-danger' ng-click='removePortfolio(portfolio._id)')
+                i.fa.fa-times
+  .row
+    .col-xs-12
+      a(ng-click="toggleNewForm()", ng-href='#').btn.btn-primary {{addPortfolioText}}
+      form.form(name='form', novalidate='', ng-show="newFormVisible")
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', ng-model='portfolio.name', focus-input-on='{{newFormVisible}}')
+          p.help-block(ng-show='form.name.$error.required && submitted') Name is required
+        .form-group
+          label Sub Name
+          input.form-control(type='text', name='subName', ng-model='portfolio.subName')
+        .form-group
+          label Portfolio URL
+          input.form-control(type='text', name='url', ng-model='portfolio.url')
+        .form-group
+          a.btn.btn-primary(name='portfolio_image', ng-model='portfolio_image', ngf-select="setPortfolioImage($file, $invalidFiles)" accept="image/*" ngf-max-size="1MB") Select Portfolio Image
+          div.preview-wrapper
+            p(ng-show='errorMsg').alert.alert-danger {{errorMsg}}
+            img(src='{{portfolio.image.original.url}}' ngf-thumbnail="portfolio_image" ng-show='portfolio.image || portfolio_image').preview-image
+        div.pull-right
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createPortfolio()' ng-hide='isEdit')
+            | Create portfolio
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updatePortfolio(portfolio._id)' ng-show='isEdit')
+            | Update portfolio

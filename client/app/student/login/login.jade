@@ -1,0 +1,50 @@
+#login(ng-full-height-bg background-url="'/assets/images/login-bg.jpg'")
+  .container
+    .row
+      .col-xs-12.section-header
+        h2 Welcome!
+        .text
+          p Log in by choosing one of the options below
+    .row.student-about
+      .col-xs-12.col-md-8.col-md-offset-2
+        .pane
+          .column-50.pull-left
+            a.btn.btn-linkedin.btn-regular
+              i.fa.fa-linkedin-square
+              .text Login with LinkedIn
+            .clearfix
+            a.btn.btn-facebook.btn-regular(ng-click="authFacebook()" href="")
+              i.fa.fa-facebook-square
+              .text Login with Facebook
+            .clearfix
+            a.btn.btn-google.btn-regular(ng-click="authGoogle()" href="")
+              i.fa.fa-google-plus-square
+              .text Login with Google
+          .column-50.pull-left
+            form.form-stacked-label(name="form" ng-submit="authLocal(form)" novalidate)
+              .form-group(ng-class="{'has-error': form.email.$error && submitted }")
+                label Email
+                input(type="email" name="email" ng-model="student.email" required)
+              div(ng-show="form.email.$error && submitted")
+                p.help-block(ng-show="form.email.$error.required")
+                  | Email is required
+                p.help-block(ng-show="form.email.$error.email")
+                  | Please provide a valid email.
+              .form-group
+                label password
+                input(type="password" name="password" ng-model="student.password" required ng-minlength="6")
+              div(ng-show="form.password.$error && submitted")
+                p.help-block(ng-show="form.password.$error.required")
+                  | Password is required
+                p.help-block(ng-show="form.password.$error.minlength")
+                  | Password min length is 6.
+              .form-group.links
+                label
+                  a(ng-click="showResetPasswordRequest()" href="") Forgot Password?
+                label
+                  a(ng-click="showResendConfrimationEmail()" href="") Don’t receive comfirmation email?
+              .form-group
+                button.btn.btn-primary.btn-regular(type="submit")
+                  i.fa.fa-sign-in
+                  .text Sign In
+

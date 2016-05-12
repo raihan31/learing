@@ -1,0 +1,13 @@
+
+.container.hoc-countries
+  .row
+    .col-xs-12.section-header
+      h3 Choose your country
+  .row
+    .col-xs-12.col-sm-4.col-md-3.text-center(ng-repeat="country in countries")
+      a(ng-href="{{country.href}}" ng-if="country.href" target="_blank")
+        span {{country.name}}
+        img(ng-src="{{country.image}}" alt="{{country.name}}")
+      a(ng-href="/hourofcode/events/{{country.id}}" ng-if="!country.href")
+        span {{country.name}}
+        img(ng-src="{{country.image}}" alt="{{country.name}}")

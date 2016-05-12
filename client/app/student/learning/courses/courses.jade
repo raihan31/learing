@@ -1,0 +1,4 @@
+.container
+  .row
+    .col-xs-12.col-sm-5.col-md-4(ng-repeat="course in courses track by $index")
+      ct-course-list-item(course-data="course")

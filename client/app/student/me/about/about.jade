@@ -1,0 +1,127 @@
+.container.student-about.student-about-edit
+  .row
+    .col-xs-12
+      div(ncy-breadcrumb)
+    .col-md-8
+      .pane
+        h5
+          | Personal Info
+          a.btn.btn-edit(ng-click='editMode = !editMode', ng-show="!editMode")
+            i.fa.fa-pencil
+          a.btn.btn-edit(ng-click='editMode = !editMode', ng-show="editMode")
+            i.fa.fa-times
+        form.info(name='userForm', ng-submit='submitForm(userForm.$valid)', novalidate='')
+          .col-sm-6
+            .attribute(ng-hide='editMode')
+              .key name
+              .value
+                | {{personalInfo.first_name+' '+personalInfo.middle_name+' '+personalInfo.last_name}}
+            .attribute(ng-show='editMode')
+              .key First Name
+              .form-group
+                input.form-control(type='text', name='first_name', ng-model='personalInfo.first_name', required='required')
+                p.help-block(ng-show='userForm.first_name.$invalid && !userForm.first_name.$pristine') First name is required.
+            .attribute(ng-show='editMode')
+              .key Middle Name
+              .form-group
+                input.form-control(type='text', name='middle_name', ng-model='personalInfo.middle_name', required='required')
+            .attribute(ng-show='editMode')
+              .key Last Name
+              .form-group
+                input.form-control(type='text', name='last_name', ng-model='personalInfo.last_name', required='required')
+            .attribute
+              .key gender
+              .value(ng-hide='editMode') {{personalInfo.gender}}
+              .form-group(ng-show='editMode')
+                select.form-control(name='gender', ng-model='personalInfo.gender', required='required')
+                  option(value='male') Male
+                  option(value='female') Female
+            .attribute
+              .key martial status
+              .value(ng-hide='editMode') {{personalInfo.marital_status}}
+              .form-group(ng-show='editMode')
+                //input.form-control(type='text', placeholder='marital_status', name='marital_status', ng-model='personalInfo.marital_status', required='required')
+                select.form-control(name='marital_status', ng-model='personalInfo.marital_status', required='required')
+                  option(value='married') Married
+                  option(value='single') Single
+                  option(value='others') Others
+            .attribute
+              .key date of birth / age
+              .value(ng-hide='editMode') {{personalInfo.date_of_birth}} / {{personalInfo.age}}
+              .form-group(ng-show='editMode')
+                input.form-control(type='text', placeholder='date_of_birth', name='dob', ng-model='personalInfo.date_of_birth', uib-datepicker-popup='{{calendar.dateFormat}}', is-open='calendar.opened.dob', datepicker-options='calendar.dateOptions',ng-click="calendar.open($event,'dob')",required='required')
+          .col-sm-6
+            .attribute
+              .key email
+              .value(ng-hide='editMode') {{personalInfo.contact_email}}
+              .form-group(ng-show='editMode')
+                input.form-control(type='text', placeholder='email', name='email', ng-model='personalInfo.contact_email', required='required')
+            .attribute
+              .key mobile
+              .value(ng-hide='editMode') {{personalInfo.mobile}}
+              .form-group(ng-show='editMode')
+                input.form-control(type='text', placeholder='mobile', name='mobile', ng-model='personalInfo.mobile', required='required')
+            .attribute
+              .key address
+              .value(ng-hide='editMode') {{personalInfo.address}}
+              .form-group(ng-show='editMode')
+                input.form-control(type='text', placeholder='address', name='address', ng-model='personalInfo.address', required='required')
+            .attribute
+              .key city
+              .value(ng-hide='editMode') {{personalInfo.city}}
+              .form-group(ng-show='editMode')
+                input.form-control(type='text', placeholder='city', name='city', ng-model='personalInfo.city', required='required')
+            .attribute
+              .key country
+              .value(ng-hide='editMode') {{personalInfo.country.name}}
+              .form-group(ng-show='editMode')
+                input.form-control(type='text', placeholder='country', name='country', ng-model='personalInfo.country.name', required='required')
+          button.btn.btn-save-cancel(type='submit', ng-disabled="userForm.$invalid", ng-show='editMode', ng-click='personalInfoEditSave()') Save
+          button.btn.btn-save-cancel(ng-show='editMode', ng-click='personalInfoEditCancel()') Cancel
+
+      .pane.no-x-padding
+          h5
+            | Authentications
+          ul.authentications
+            li(ng-repeat="provider in authProviders")
+              .left-part
+                i(class="{{provider.iconClass}}")
+                span {{provider.name}}
+              .right-part(ng-show="provider.authenticated")
+                a.btn.btn-edit(ng-click ="authenticationCheck(provider.url)")
+                  i.fa.fa-pencil
+                a.btn.btn-edit
+                  i.fa.fa-close
+              .middle
+                a(ng-show="provider.authenticated")
+                  | Authenticated
+                a.btn.btn-edit(ng-show="!provider.authenticated")
+                  i.fa.fa-plus
+        .pane.no-x-padding
+          h5
+            | Education
+            a.btn.btn-edit(ui-sref="student.me.about.addEducation({id: personalInfo.id})")
+              i.fa.fa-plus
+          ct-student-education-details(personal-info='personalInfo')
+    .col-xs-12.col-md-4
+      .pane(ng-repeat="course in courses track by $index")
+        h5
+          | Courses
+        ul.enrolled-courses
+          li(ui-sref="student.learning.course({id:course.id})")
+            a.btn-edit.btn
+              i.fa.fa-chevron-right
+            .info
+              .name course
+              .description
+                | {{course.name}}
+          li
+            .info
+              .name Education model
+              .description
+                | {{course.education_model}}
+          li
+            .alert.alert-green
+              a(ui-sref="student.learning.onlinetests") Skill tests
+        a.student-manage-subscription(ui-sref='student.me.subscription({id:course.subscription_id})')
+          | Manage subscription

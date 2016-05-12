@@ -1,0 +1,25 @@
+section.section-step
+  .container
+    header.row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        h3 Payment
+        p 
+          | To confirm your enrolment in the 
+          strong {{course.name}} at&nbsp;
+          strong {{learningCenter.name}} 
+          br 
+          | you have to pay the 
+          strong {{showPriceName()}} {{showPrice()}} {{educationModel.currency}}.
+          
+        p
+          | You can do so by coming to our office located in&nbsp;
+          strong {{learningCenter.address}}&nbsp;
+          | everyday, from 
+          strong Sunday to Thursday, from 9:30 6:30.
+        p
+          | When you complete your payment you will receive the activation code to access your profile and learning materials
+          br
+    article
+      .row
+        .col-xs-12.text-align-center
+          a.btn.btn-success(ng-click="enroll()" ng-hide="hideEnrollBtn") Enroll!

@@ -1,0 +1,54 @@
+#course-profile-student {
+  h5 {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  h6 {
+    color: #9bb1bb;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    line-height: 10px;
+    display: block;
+    font-weight: 400;
+    text-transform: none;
+    color: #333;
+    //margin-top: 25px;
+  }
+  .border-top {
+    margin-top: 60px;
+    width: 100px;
+  }
+  .avatar-and-status {
+    //margin-left: 50px;
+
+    .avatar {
+      border-radius: 50%;
+      box-shadow: 5px 13px 13px rgba(0, 20, 81, 0.4);
+      height: 100px;
+      margin-bottom: 18px;
+      width: 100px;
+      position: relative;
+
+      img {
+        border-radius: 50%;
+        margin-bottom: 30px;
+      }
+      strong {
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+  }
+}

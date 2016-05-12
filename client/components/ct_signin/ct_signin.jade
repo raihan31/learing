@@ -1,0 +1,39 @@
+ct-password-recovery
+.row(ng-show="errors")
+  .col-xs-12.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3.errors
+    .alert.alert-danger(ng-repeat='(name, message) in errors')
+      strong {{name}}&nbsp;
+      | {{message}}
+form(name="signInForm" novalidate ng-submit="signIn(signInForm)")
+  .row
+    .form-group.col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4(ng-class="{ 'has-error' : signInForm['student[email]'].$invalid && submitted }")
+      .input-group
+        span.input-group-addon 
+          i.ct-icon-email
+        input#student-email.form-control(type='email', placeholder='Email', name="student[email]", ng-model="student_form.email", required)
+      div(ng-show="signInForm['student[email]'].$invalid && submitted")
+        p.help-block(ng-show="signInForm['student[email]'].$error.required")
+          | Email is required
+        p.help-block(ng-show="signInForm['student[email]'].$error.email")
+          | Email is invalid please provide a valid email 
+          | for example: example@example.com
+  .row
+    .form-group.col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4(ng-class="{ 'has-error' : signInForm['student[password]'].$invalid && submitted }")
+      .input-group
+        span.input-group-addon 
+          i.ct-icon-lock
+        input#student-password.form-control(type='password', placeholder='Password', name="student[password]", ng-model="student_form.password", required)
+      div(ng-show="signInForm['student[password]'].$invalid && submitted")
+        p.help-block(ng-show="signInForm['student[password]'].$error.required")
+          | Password is required
+        
+  .align-children-middle.text-align-center(ng-show="student.hideSingUpNav")
+    button.btn.btn-primary(type="submit") Login
+    br  
+    a(ng-click="openPswdRecoveryModal()" href="#")
+      | Forgot your password?
+  .align-children-middle.text-align-center.next-state(ng-hide="student.hideSingUpNav")
+    button.btn.btn-primary(type="submit") next
+    br  
+    a(ng-click="openPswdRecoveryModal()" href="#")
+      | Forgot your password?

@@ -1,0 +1,197 @@
+.student-about {
+  .info {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+    width: 100%;
+    .attribute {
+      //margin-top: 20px;
+      margin-bottom: 20px;
+      &:first-child {
+        margin-top: 0;
+      }
+      .key {
+        color: transparentize($blue-grey-color, .40);
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.6px;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+      .value {
+        color: $dark-blue-color;
+        @include ssp-regular($size: "20px", $lH: "26.25px", $fW: "500");
+      }
+    }
+  }
+
+  .pane {
+    border: 1px solid $light-grey-color;
+    box-shadow: 0 15px 18px transparentize($blue-color, .90);
+    margin-top: 30px;
+    padding: 20px 25px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    &.no-x-padding {
+      padding-left: 0;
+      padding-right: 0;
+      h5 {
+        margin-left: 25px;
+        margin-right: 25px;
+      }
+    }
+    h5 {
+      color: transparentize($blue-grey-color, .40);
+      position: relative;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 25px;
+      .btn-edit {
+        margin-top: -14px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+      }
+    }
+
+
+    .authentications {
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 10px 25px;
+        width: 100%;
+        &:after {
+          content: " ";
+          display: table;
+          clear: both;
+        }
+        &:hover {
+          box-shadow: 0 0 32px transparentize(#000, .9);
+          .right-part {
+            display: block;
+          }
+        }
+        .left-part {
+          float: left;
+          width: 120px;
+          color: $blue-color;
+          font-size: 15px;
+          text-transform: capitalize;
+          i {
+            color: $blue-grey-color;
+            font-size: 24px;
+            vertical-align: top;
+            float: left;
+            width: 22px;
+          }
+          span {
+            margin-left: 20px;
+          }
+        }
+        .middle {
+          margin: 0 65px 0 120px;
+          a:not(.btn-edit) {
+            color: $blue-grey-color;
+            font-size: 15px;
+          }
+          a.btn-edit {
+            float: left;
+          }
+        }
+        .right-part {
+          display: none;
+          float: right;
+          width: 65px;
+          a {
+            float: left;
+            margin-left: 15px;
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+    .enrolled-courses {
+      padding: 0;
+      list-style: none;
+      margin-bottom: 15px;
+
+      li {
+        padding: 15px 0;
+        border-top: 1px solid #ccc;
+
+        &:first-child {
+          padding-top: 0;
+          border-top: 0;
+        }
+        a.btn-edit {
+          float: right;
+          margin-top: 25px
+        }
+        .info {
+          line-height: 25px;
+          margin-right: 25px;
+          width: auto;
+
+          .name {
+            font-size: 13px;
+            font-weight: bold;
+            color: $blue-color;
+            text-transform: uppercase;
+          }
+
+          .description {
+            font-size: 15px;
+            color: $blue-color;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+.student-about-edit {
+  .form-group input:not([type="submit"]), .form-group input[type="text"] {
+    border: 1px solid #888;
+    height: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  select {
+    border-radius: 0;
+    margin-top: 15px;
+  }
+  .btn-save-cancel {
+    color: white;
+    background-color: #39b54a;
+    border-radius: 0;
+    margin-right: 15px;
+    height: 45px;
+    padding: 14px 30px;
+  }
+  .btn-save-cancel:hover {
+    background-color: #149225;
+  }
+  .alert-green a {
+    color: #fff;
+    font-weight: bold;
+  }
+  .student-manage-subscription {
+    color: rgba(96, 125, 139, 0.6);
+    font-weight: 400;
+    text-decoration: underline;
+  }
+  .student-manage-subscription:hover {
+    color: #001451;
+  }
+}
+
+

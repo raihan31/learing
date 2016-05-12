@@ -1,0 +1,23 @@
+section.section-step
+  .container
+    header.row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        ct-signup-nav(state='"select_education_model"')
+        h3 SELECT YOUR ENROLMENT PLAN
+        p 
+          | Here you can choose the enrolment plan that better suits your career goals (Click to select)
+    article
+      .row
+        .col-xs-12.col-sm-6.col-md-3(ng-repeat="educationModel in educationModels" ng-class="{ \
+         'col-md-offset-3': (educationModels.length == 2) && $first, 'col-md-offset-45': (educationModels.length == 1) && $first}" ct-select-pane data="educationModel" event-name="'education_model:selected'")
+         .education-model
+           header.align-children-middle
+             h5 {{educationModel.name}}
+           article.align-children-middle
+             p(ng-bind-html="educationModel.description") 
+           .overlay.align-children-middle(ng-show="educationModel.selected")
+             .checkmark.align-children-middle
+               i.ct-icon-check
+
+    ct-signup-enroll-btn(ng-show="isSelected()")
+        

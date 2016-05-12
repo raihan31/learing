@@ -1,0 +1,48 @@
+.container
+  .row
+    .col-xs-12
+      h1 UpWork profile listing
+      table.table
+        thead
+          tr.active
+            th Student ID
+            th Name
+            th Title
+            th City
+            th Last Worked
+            th Last Activity
+            th Image
+            th.text-center Earnings
+        tbody
+          tr(ng-repeat-start='profile in profiles').info
+            td {{profile.student_id}}
+            td {{profile.raw.dev_first_name}}
+            td {{profile.raw.dev_profile_title}}
+            td {{profile.raw.dev_city}}
+            td {{profile.raw.dev_last_worked}}
+            td {{profile.raw.dev_last_activity}}
+            td
+              img(ng-src='{{profile.raw.dev_portrait}}').index-view-image
+            td.actions.text-center
+              a(ng-href='#' class='btn-sm btn-info' ng-click='toggleEarning = !toggleEarning')
+                i(ng-class="toggleEarning ? 'fa-dollar' : 'fa-expand'").fa
+          tr(ng-repeat-end="" ng-show='toggleEarning' ng-animate="'box'").box.on
+            td(colspan="8")
+              table.table
+                thead
+                  tr
+                    th Type
+                    th Description
+                    th Amount
+                    th When
+                tbody
+                  tr(data-ng-repeat='earning in profile.earnings')
+                    td {{earning.type}}
+                    td {{earning.description}}
+                    td {{earning.amount}}
+                    td {{earning.when}}
+                  tr
+                    td(colspan='2').text-right
+                      b Total:
+                    td(colspan='2')
+                      b ${{totalEarning(profile.earnings)}}

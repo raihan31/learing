@@ -1,0 +1,120 @@
+@import "_variables";
+.select-pane {
+  border-radius: 5px;
+  box-shadow: 0 1px 2px transparentize($ct-blue-color, .4);
+  margin-bottom: 25px;
+  position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+
+
+  header {
+    background: transparentize($ct-blue-color, .72);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    // padding: 25px 15px;
+
+    display: block;
+    height: 99px;
+    text-align: center;
+
+
+    &.header-orange {
+      background: transparentize($ui-orange-color, .27);
+    }
+    &.header-red {
+      background: transparentize($ui-red-color, .27);
+      .ct-icon-rails {
+        font-size: 76px;
+      }
+    }
+    &.header-blue {
+      background: transparentize($ui-blue-color, .27);
+      .ct-icon-php {
+        font-size: 62px;
+      }
+    }
+    &.header-green {
+      background: transparentize($ui-green-color, .27);
+
+    }
+    &.header-yellow-green {
+      background: transparentize($ui-yellow-green-color, .27);
+      .ct-icon-android {
+        font-size: 71px;
+      }
+    }
+
+    i {
+      color: #fff;
+      font-size: 40px;
+      margin-left: 10px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .ct-icon-html5 {
+      font-size: 48px;
+    }
+    .ct-icon-css3 {
+      font-size: 48px;
+    }
+    .ct-icon-js {
+      font-size: 48px;
+    }
+    .ct-icon-php {
+      font-size: 42px;
+    }
+    .ct-icon-upwork {
+      font-size: 40px;
+    }
+  }
+
+  article.bottom {
+    color: $ct-blue-color;
+    text-align: center;
+    height: 75px;
+    margin: 0 !important;
+    padding: 0 10px;
+
+    h6 {
+      margin: 0;
+      width: 98%;
+    }
+  }
+
+  .overlay {
+    left: 0;
+    position: absolute;
+    top:0;
+
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    background: transparentize($ct-blue-color, .72);
+    border-radius: 5px;
+
+    text-align: center;
+
+    .checkmark {
+      background: $ct-green-color;
+      border-radius: 158px;
+      border: 1px solid $white;
+
+      height: 76px;
+      width: 76px;
+
+      text-align: center;
+      i {
+        color: #fff;
+        font-size: 35px;
+      }
+    }
+  }
+}

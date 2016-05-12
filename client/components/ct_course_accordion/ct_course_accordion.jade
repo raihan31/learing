@@ -1,0 +1,25 @@
+{{course.id}}
+ul.recursive-accordion
+  li(ng-repeat="skill in skills" ui-sref-active="active")
+    a.pull-left.name(href="" ui-sref="student.learning.course.skill({skillId: skill.id})")
+      | {{skill.name}}
+    a.pull-right.next(href="" ng-if="skill.topics" ng-click="toggleChildren($event)")
+      i.fa.fa-chevron-right
+    .clearfix
+    strong.content-type(ng-if="skill.topics.length") topic
+    ul(ng-if="skill.topics.length")
+      li(ng-repeat="topic in skill.topics" ui-sref-active="active")
+        a.pull-left.name(href="" ui-sref="student.learning.course.skill.topic({topicId: topic.id})")
+          | {{topic.name}}
+        a.pull-right.next(href="" ng-click="toggleChildren($event)")
+          i.fa.fa-chevron-right
+        .clearfix
+        strong.content-type(ng-if="skill.topics.length") Lesson
+        ul(ng-if="topic.lessons.length")
+          li(ng-repeat="lesson in topic.lessons" ui-sref-active="active")
+            a(href="" ui-sref="student.learning.course.skill.topic.lesson({lessonId: lesson.id})")
+              i.fa.fa-check-circle.pull-left
+              i.fa.fa-chevron-right.pull-right
+              .text.name {{lesson.name}}
+              .underscore
+              

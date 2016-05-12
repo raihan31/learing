@@ -1,0 +1,12 @@
+.ct-referral-link {
+  input {
+    background-color: #eeecea;
+    padding: 10px 15px;
+
+    @include ssp-regular($size: "22px");
+    color: $blue-grey-color;
+    &:disabled {
+      background: #fff;
+    }
+  }
+}

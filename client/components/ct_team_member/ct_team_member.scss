@@ -1,0 +1,40 @@
+.staff {
+  list-style: outside none none;
+  padding: 0 47px;
+  > li {
+    float: left;
+    text-align: center;
+    width: 25%;
+  }
+}
+
+.person-block {
+  display: block;
+  margin: 0 auto 25px;
+  text-decoration: none;
+}
+
+.social-list {
+  font-size: 0;
+  padding: 15px 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 3px;
+    vertical-align: middle;
+    a {
+      border: 2px solid #607D8B;
+      border-radius: 50%;
+      display: block;
+      height: 22px;
+      text-decoration: none;
+      width: 22px;
+      line-height: 19px;
+      color: #607D8B;
+      font-size: 12px;
+    }
+  }
+}
+
+

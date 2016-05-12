@@ -1,0 +1,24 @@
+.slide-frame {
+  position: relative;
+  overflow: hidden;
+
+  h4 {
+    font-size: 20px;
+  }
+  .wave {
+    h6 {
+      font-weight: 500;
+      font-size: 15px;
+
+      ul {
+        padding-left: 0;
+        list-style-type: none;
+      }
+    }
+  }
+}
+
+.slide-frame > div {
+  width: 100%;
+}
+

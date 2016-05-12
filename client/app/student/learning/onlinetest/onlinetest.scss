@@ -1,0 +1,119 @@
+.online-test {
+  .skill-test-margin-top{
+    margin-top: 5px !important;
+    //margin-bottom: 20px !important;
+  }
+  ul {
+    padding-left: 0;
+    padding-top: 1px;
+    li {
+      list-style-type: none;
+    }
+  }
+
+  .online-test-link {
+    color: #000;
+  }
+  .test-content {
+
+  }
+  .test-content:hover {
+    box-shadow: 0 6px 24px rgba(0, 20, 81, 0.1);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .test-name {
+    color: #001451;
+    font-size: 17px;
+    line-height: 26px;
+    margin: 5px 0 0;
+
+    .fa-chevron-right {
+      color: #23a5e1;
+    }
+  }
+  .span-icon-class {
+    position: relative;
+    left: 28px;
+    top: -5px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .test-panel-heading {
+    text-transform: uppercase;
+    background: #f3f7f9;
+    border-color: #f3f7f9;
+
+    h6 {
+      color: #9bb1bb;
+    }
+    .test-completed-score-border {
+      border-left: 2px solid #fff;
+      border-right: 2px solid #fff;
+    }
+  }
+  .test-completed {
+    position: relative;
+    h6 {
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+    .test-completed-score {
+      color: #9bb1bb;
+    }
+    span {
+      color: #9bb1bb;
+      font-size: 14px;
+      position: absolute;
+      bottom: 18px;
+      left: 16px;
+    }
+  }
+  .span-icon-class-no-padding {
+    left: -10px;
+  }
+  i {
+    color: #9bb1bb;
+    margin: 10px;
+  }
+  p {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+  .btn-start {
+    text-transform: none;
+    font-size: 13px;
+    border-radius: 50px;
+    height: 36px;
+    padding: 10px 36px;
+    border-color: #23a5e1 !important;
+    background-color: #23a5e1 !important;
+
+    .fa-angle-right {
+      left: 12px;
+      position: relative;
+      font-size: 14px;
+    }
+  }
+  a.btn-status {
+    padding: 5px;
+    height: 25px;
+    text-transform: none;
+    font-size: 12px;
+    border-radius: 50px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: -10px;
+  }
+  hr {
+    border: 1px solid;
+    border-color: rgba(233, 238, 241, 0.44);
+  }
+  .completed-test {
+    padding-top: 45px;
+  }
+}
+.online-test-padding-bottom {
+  padding-bottom: 22vh;
+}

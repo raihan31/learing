@@ -1,0 +1,24 @@
+section.section-step.ct-signup-personal-data
+  .container
+    header.row(ng-hide="student.hideSingUpNav")
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        ct-signup-nav(state='"personal_data"')
+        h3 INTRODUCE YOURSELF
+        p 
+          | Let us know a bit about yourself so that we can set your career for success
+    article
+      .row.btn-tabs
+        .col-xs-12.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
+          button.btn.btn-tab(ng-click="makeTabActive(0)" ng-class="{'btn-primary': (activeTabIndex == 0), 'btn-dark-blue': (activeTabIndex != 0)}")
+            | Create new account
+        .col-xs-12.col-sm-4.col-md-3
+          button.btn.btn-tab(ng-click="makeTabActive(1)" ng-class="{'btn-primary': (activeTabIndex == 1), 'btn-dark-blue': (activeTabIndex != 1)}")
+            | Use existing account
+          p
+            br
+      ct-signup-form(student='student' ng-hide="activeTabIndex != 0")
+      ct-signin-form(student='student' ng-hide="activeTabIndex != 1")
+      
+  
+          
+        

@@ -1,0 +1,38 @@
+
+
+.breadcrumb {
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+
+  padding: 20px 0;
+
+  // margin-bottom: 50px;
+
+  & > li + li:before {
+    content: " > ";
+    color: #ccc;
+    font-size: 19px;
+    line-height: 1;
+
+    padding: 0 5px;
+    vertical-align: top;
+  }
+
+  li {
+
+    span,
+    a {
+      color: $light-blue-color;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.2px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    span {
+      color: $asphalt-color;
+    }
+  }
+}

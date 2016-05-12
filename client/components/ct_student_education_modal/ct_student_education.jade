@@ -1,0 +1,57 @@
+.modal-body
+  button.close(type="button" data-dismiss="modal" ng-click="cancel()" aria-hidden="true")
+    i.fa.fa-angle-left Go Back
+  h4.modal-title Add Education
+    form(role="form" name="studentEducation" novalidate ng-submit="studentEducationSave(studentEducation, education)")
+      .form-group
+        label(for="degree") Degree
+        select.form-control(ng-model="education.degree_name" name="education['degree']" id="degree" required)
+          option(value="") Select One
+          option(value="SSC") SSC / Equivalent
+          option(value="HSC") HSC / Equivalent
+          option(value="A Level") A Level / Equivalent
+          option(value="O Level") O Level / Equivalent
+          option(value="Diploma") Diploma / Equivalent
+          option(value="Honors") Honors / Equivalent
+          option(value="BSc Engineering") BSc Engineering / Equivalent
+          option(value="Masters") Masters / Equivalent
+          option(value="MSc Engineering") MSc Engineering / Equivalent
+          option(value="Others") Others
+        div(ng-show="studentEducation['education[degree]'].$invalid && submitted")
+          p.help-block(ng-show="studentEducation['education[degree]'].$error.required")
+            | Degree is required
+      .form-group
+        label(for="instituteName") Institute Name
+        input.form-control(type="text" ng-model="education.institution" name="education['institute']" id="instituteName" required)
+        div(ng-show="studentEducation['education[institute]'].$invalid && submitted")
+          p.help-block(ng-show="studentEducation['education[institute]'].$error.required")
+            | Institute Name is required
+      .form-group
+        label(for="major") Subject / Major
+        input.form-control(type="text" name="education['major']" ng-model="education.major" id="major" required)
+        div(ng-show="studentEducation['education[major]'].$invalid && submitted")
+          p.help-block(ng-show="studentEducation['education[major]'].$error.required")
+            | Major is required
+      .form-group
+        label(for="passingYear") Passing Year
+        select.form-control(ng-model="education.passing_year" name="education['passingYear']" id="passingYear" ng-options="year for year in years" required)
+          option(value="") Select One
+        div(ng-show="studentEducation['education[passingYear]'].$invalid && submitted")
+          p.help-block(ng-show="studentEducation['education[passingYear]'].$error.required")
+            | Passing Year is required
+      .form-group
+        label(for="gpa") GPA / Division
+        input.form-control(type="text" ng-model="education.gpa" name="education['gpa']" id="gpa" required)
+        div(ng-show="studentEducation['education[gpa]'].$invalid && submitted")
+          p.help-block(ng-show="studentEducation['education[gpa]'].$error.required")
+            | GPA is required
+      .form-group
+        label(for="status") Status
+        select.form-control(ng-model="education.status" name="education['status']" id="status" required)
+          option(value="") Select One
+          option(value="Completed") Completed
+          option(value="On-going") On-going
+        div(ng-show="studentEducation['education[status]'].$invalid && submitted")
+          p.help-block(ng-show="studentEducation['education[status]'].$error.required")
+            | Status is required
+      button.btn(type="submit") Add

@@ -1,0 +1,9 @@
+.select-pane.select-pane-text
+  header.header-blue.align-children-middle
+    .dib.align-children-middle
+      h5 {{data.name}}
+  article.bottom.align-children-middle
+    p(ng-bind-html="data.description") 
+  .overlay.align-children-middle(ng-show="data.selected && !preventClick")
+    .checkmark.align-children-middle
+      i.ct-icon-check

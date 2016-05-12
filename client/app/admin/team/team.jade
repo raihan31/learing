@@ -1,0 +1,101 @@
+.container
+  .row
+    .col-xs-12
+      h1 Team & Team Members
+      table.table
+        thead
+          tr
+            th Team Name
+            th Image
+            th Actions
+        tbody
+          tr(ng-repeat='team in teams track by $index', ng-show="team._id")
+            td(colspan='3')
+              div.col-lg-12
+                div.col-lg-3 {{team.name}}
+                div.col-lg-3
+                  img(ng-src='{{team.image.original.url}}').index-view-image
+                div.col-lg-6.actions
+                  a(ng-href='#' class='btn-sm btn-default' ng-click='toggleMember = !toggleMember')
+                    i.fa.fa-eye &nbsp; List Member
+                  a(ng-href='#' class='btn-sm btn-primary' ng-click='addTeamMember(team._id)')
+                    i.fa.fa-plus &nbsp; Member
+                  a(ng-href='#' class='btn-sm btn-warning' ng-click='editTeam(team._id)')
+                    i.fa.fa-pencil
+                  a(ng-href='#' class='btn-sm btn-danger' ng-click='removeTeam(team._id)')
+                    i.fa.fa-times
+              div(ng-show='toggleMember').col-lg-12
+                table.table
+                  thead
+                    tr
+                      th Name
+                      th Designation
+                      th Image
+                      th Social Networks
+                      th Actions
+                  tbody
+                    tr(data-ng-repeat='member in team.members track by $index' ng-show='member')
+                      td {{member.name}}
+                      td {{member.designation}}
+                      td
+                        img(ng-src='{{member.image.original.url}}').index-view-image
+                      td
+                        a(ng-repeat='network in member.socialNetworks track by $index' ng-href='{{network.url}}' ng-show='network')
+                          i(class='{{network.iconClass}}')
+                      td.actions
+                        a(ng-href='#' class='btn-sm btn-warning' ng-click='editTeamMember(team._id, member._id)')
+                          i.fa.fa-pencil
+                        a(ng-href='#' class='btn-sm btn-danger' ng-click='removeTeamMember(team._id, member._id)')
+                          i.fa.fa-times
+  .row
+    .col-xs-12
+      a(ng-click="toggleTeamForm()", ng-href='#').btn.btn-primary {{addTeamText}}
+      form.form(name='form', novalidate='', ng-show="teamFormVisible")
+        .form-group
+          label Team Name
+          input.form-control(type='text', name='name' ng-model='team.name', focus-input-on='{{teamFormVisible}}')
+        .form-group
+          a.btn.btn-primary(name='team_image', ng-model='team_image', ngf-select="setTeamImage($file, $invalidFiles, true)" accept="image/*" ngf-max-size="1MB") Select Team Image
+          div.preview-wrapper
+            p(ng-show='teamErrorMsg').alert.alert-danger {{teamErrorMsg}}
+            img(src='{{team.image.original.url}}' ngf-thumbnail="team_image" ng-show='team.image || team_image').preview-image
+        div.pull-right
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createTeam()' ng-hide='isEditTeam')
+            | Create Team
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updateTeam(team._id)' ng-show='isEditTeam')
+            | Update Team
+
+      div(ng-show='memberFormVisible')
+        h1 Team Member
+        form.form(name='form', novalidate='')
+          .form-group
+            label Member Name
+            input.form-control(type='text' name='name' ng-model='teamMember.name', focus-input-on='{{memberFormVisible}}')
+          .form-group
+            label Designation
+            input.form-control(type='text' name='name' ng-model='teamMember.designation')
+          .form-group
+            a.btn.btn-primary(name='member_image', ng-model='member_image', ngf-select="setTeamImage($file, $invalidFiles, false)" accept="image/*" ngf-max-size="1MB") Select Team Image
+            div.preview-wrapper
+              p(ng-show='teamErrorMsg').alert.alert-danger {{teamErrorMsg}}
+              img(src='{{team.image.original.url}}' ngf-thumbnail="member_image" ng-show='teamMember.image || member_image').preview-image
+          div
+            a(hg-href='#' ng-click='addSocialNetwork()').btn
+              i.fa.fa-plus Social Link
+          div.social-network
+            div(ng-repeat='socialNetwork in teamMember.socialNetworks track by $index').social-network-item
+              a(ng-href='#' ng-click='removeSocialNetwork($index)').remove-social-network
+                i.fa.fa-times-circle-o
+              label IconClass
+              input.form-control(type='text', name='socialNetwork.iconClass', ng-model='socialNetwork.iconClass')
+              label URL
+              input.form-control(type='text', name='socialNetwork.url', ng-model='socialNetwork.url')
+              label Name
+              input.form-control(type='text', name='socialNetwork.name', ng-model='socialNetwork.name')
+          div.pull-right
+            button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createTeamMember()' ng-hide='isEditMember')
+              | Create Member
+            button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updateTeamMember(teamMember._id)' ng-show='isEditMember')
+              | Update Member
+            button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='toggleMemberForm()')
+              | Cancel

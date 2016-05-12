@@ -1,0 +1,255 @@
+$hoc-color: #1aadbb;
+
+.hour-of-code {
+  ct-hero {
+    header.hero-unit:not(.section-step) .container {
+      h1 {
+        margin-top: 60px;
+      }
+      ng-transclude {
+        margin-bottom: 0px;
+      }
+    }
+
+    .countdown {
+      text-align: center;
+      margin-bottom: 40px;
+      display: block;
+
+      .progress-radial {
+        float: none;
+        display: inline-block;
+        margin-left: 50px;
+        margin-right: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        .overlay {
+          line-height: 1;
+          padding-top: 12px;
+          span {
+            font-size: 12px;
+          }
+          strong {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+
+
+    .join-wrapper {
+      & > * {
+        vertical-align: top;
+      }
+      .text {
+        font-size: 20px;
+        line-height: 1;
+        text-align: left;
+
+        display: inline-block;
+        margin-left: 20px;
+
+        strong {
+          font-size: 27px;
+
+          display: block;
+          padding-bottom: 3px;
+        }
+      }
+    }
+  }
+  .event-date {
+    margin-bottom: 40px;
+
+    i {
+      font-size: 53px;
+      line-height: 1;
+    }
+
+    .days {
+      display: inline-block;
+      margin-left: 20px;
+
+      font-size: 26px;
+      line-height: 1;
+      text-align: left;
+
+      .day {
+        display: inline-block;
+
+        font-size: 26px;
+        font-weight: 700;
+
+        sup {
+          left: 2px;
+          // top: -8px;
+          font-weight: 300;
+          font-size: 14px;
+        }
+      }
+
+      .month {
+        font-size: 20px;
+      }
+    }
+
+    .year {
+      display: inline-block;
+      margin-left: 10px;
+
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+  }
+  .celebs {
+    margin-top: 80px;
+    h2 {
+      color: $blue-color;
+      font-weight: 400;
+
+      margin-top: 60px;
+      padding-bottom: 40px;
+
+      strong {
+        font-weight: 700;
+      }
+      span {
+        color: $white;
+        font-weight: 900;
+        text-transform: uppercase;
+
+        background-color: $hoc-color;
+      }
+    }
+  }
+
+  .blue-rect.video {
+    margin-top: 260px;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+
+    iframe {
+      margin-top: 200px;
+      box-shadow: 0 0 13px rgba(0, 0, 0, .5);
+    }
+
+    .hoc-logo {
+      background: url('#{$img-path}/hoc/hour-of-code-logo.png') no-repeat 0 0;
+
+      display: block;
+      width: 102px;
+      height: 102px;
+      margin: -251px auto;
+      z-index: 100;
+      position: relative;
+    }
+
+    .text-center a.btn:first-child {
+      margin-right: 30px;
+    }
+  }
+
+  [class*="w-icon"].w-house-icon {
+    background: url("#{$img-path}/hoc/house.png") no-repeat 0 0;
+    height: 81px;
+    width: 81px;
+  }
+
+  [class*="w-icon"].w-person-icon {
+    background: url("#{$img-path}/hoc/person.png") no-repeat 0 0;
+    width: 75px;
+    height: 88px;
+  }
+
+  [class*="w-icon"].w-pc-icon {
+    background: url("#{$img-path}/hoc/pc.png") no-repeat 0 0;
+    width: 89px;
+    height: 65px;
+  }
+
+  .w-circle.w-circle-light {
+    background-color: $light-blue-color !important;
+  }
+
+  .celeb-quote {
+    margin-bottom: 80px;
+    ct-person-block {
+      width: 150px;
+      display: block;
+      float: left;
+    }
+
+    blockquote {
+      margin-left: 180px;
+      border-left: 0;
+      padding: 40px 0 0;
+      position: relative;
+      font-size: 25px;
+      color: $blue-grey-color;
+
+      &:before {
+        color: #607d8b;
+        font-weight: 700;
+        content: "“";
+        font-size: 60px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        line-height: 1;
+      }
+    }
+  }
+
+  .how-to-join {
+    background: url('#{$img-path}/hoc/how-bg.jpg') no-repeat center;
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .section-header {
+      text-align: left;
+      color: $white;
+      p {
+        color: $white;
+        font-size: 22px;
+      }
+    }
+    .btn-counter {
+      width: 296px;
+      margin-top: 20px;
+      &:first-child {
+        margin-top: 80px;
+      }
+      &.two-lines {
+        padding-top: 9px;
+        padding-bottom: 9px;
+      }
+    }
+  }
+
+  .partners {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    h2 {
+      color: $blue-color;
+    }
+
+    img {
+      width: auto;
+      margin: 20px 20px 0 0px;
+    }
+  }
+
+  .stickers .stick {
+    min-height: 0 !important;
+  }
+}
+
+@media only screen and (min-width: $screen-md) {
+           
+}

@@ -1,0 +1,12 @@
+#course-profile-student
+  .pane
+    h5 My Profile
+    .avatar-and-status
+      .avatar
+        img(ng-src="{{student.avatar}}" alt="{{student.name}}")
+        p {{student.name}}
+      hr.border-top
+      h6 Status
+      p {{student.status}}
+      //a.btn.btn-edit
+      //  i.fa.fa-pencil

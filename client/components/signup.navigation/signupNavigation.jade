@@ -1,0 +1,8 @@
+.navigation
+  .dot(ng-repeat="state in states" ng-class="{active: isCurrentState(state), disabled: isDisabled($index)}" data-id="{{state}}")  
+    | {{$index + 1}}
+  .line
+    //- .circle-dot.active
+    //-   .dot
+    //- .circle-dot
+    //-   .dot

@@ -1,0 +1,129 @@
+.about-header {
+  margin-top: 80px;
+  .description {
+    color: #425862;
+    display: block;
+    font-size: 17px;
+    line-height: 24px;
+    margin: 0 0 25px;
+    font-weight: normal;
+  }
+}
+
+.default {
+  padding: 50px 0 65px;
+}
+.gray-block,
+#about-4 {
+  h2 {
+    color: $dark-blue-color;
+    padding: 25px 0;
+  }
+}
+
+.gray-block {
+  background-color: #edf2f4;
+  background-image: linear-gradient(to top, #ffffff 0%, #edf1f3 100%);
+  background-size: 100% auto;
+  padding-bottom: 70px;
+  p {
+    color: #425862;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    font-size: 17px;
+    margin-bottom: 25px;
+    font-weight: normal;
+    img {
+      width: auto;
+    }
+  }
+}
+
+.person-block {
+  &.pulled {
+    margin-top: -65px;
+  }
+  img {
+    border-radius: 50%;
+    box-shadow: 0 13px 16px #cdd9dd;
+    display: block;
+    height: 129px;
+    margin: 0 auto 25px;
+    width: 129px;
+  }
+  .name {
+    color: #425862;
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  .appointment {
+    color: #607d8b;
+    display: block;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  display: block;
+  margin: 0 auto 25px;
+  text-decoration: none;
+}
+
+.team-country {
+  cursor: pointer;
+  margin-bottom: 20px;
+  img {
+    width: auto;
+  }
+
+  h5 {
+    font-size: 17px;
+    color: $blue-grey-color;
+    margin-bottom: 20px;
+  }
+
+  .team-country-map {
+    height: 113px;
+    position: relative;
+    width: 100%;
+
+    img {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+
+  &.active {
+    h5 {
+      color: $light-blue-color;
+    }
+  }
+}
+
+.blue-rect.map-section {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 50px;
+  min-height: 0;
+}
+.offices-list {
+  .col-xs-12 {
+    min-height: 150px;
+  }
+}
+map {
+  .offices-list {
+    padding: 0;
+
+  }
+}
+
+@media screen and (max-width: $screen-xs-max) {
+
+    #about-2 {
+      h2 {
+        padding: 36px 0;
+      }
+    }
+}

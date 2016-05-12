@@ -1,0 +1,13 @@
+.person-block.text-center
+  span.img
+    span.mask
+      img(ng-src='{{member.image.thumb.url}}', alt='{{member.name}}')
+  span.name {{member.name}}
+  span.appointment(ng-show="typeof(member.designation) != 'undefined'") {{member.designation}}
+  ul.social-list(ng-show="member.socialNetworks.length || member.email")
+    li(ng-repeat="sN in member.socialNetworks")
+      a(ng-href='{{sN.url}}' target="_blank")
+        span(class="{{sN.iconClass}}")
+    li(ng-show="member.email")
+      a(ng-href='mailto:{{member.email}}')
+        span.fa.fa-envelope

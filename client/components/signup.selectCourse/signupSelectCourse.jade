@@ -1,0 +1,16 @@
+section.section-step
+  .container
+    header.row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        ct-signup-nav(state='"select_course"')
+        h3 SELECT YOUR COURSE
+        p 
+          | Here you can see all the courses available at the Learn & Earn centre that you have selected (Click to select)
+    article
+      .row
+        .col-xs-12.col-sm-6.col-md-3(ng-repeat="course in courses" ct-select-pane event-name="'course:selected'" data="course")
+          ct-learning-path-item(data="course")
+            .overlay.align-children-middle(ng-show="course.selected")
+              .checkmark.align-children-middle
+                i.ct-icon-check
+    ct-signup-next-step-btn(ng-show="isSelected()" state="'select_course'")

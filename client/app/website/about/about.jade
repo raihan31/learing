@@ -1,0 +1,150 @@
+//- ct-hero(hero-data="heroData")
+main(role='main')
+  
+  section#about-2.about-block.skin-2
+    .container
+      h2
+        | Vision: 
+        br
+        | Democratize access to education
+      |             
+      h4
+        | We believe in a borderless world with equal opportunities for everyone.
+        br
+        | We believe student finance and the freelance market will make this happen.
+      |             
+      p
+        | Currently, paid education and equal opportunities is limited to people that are born in certain
+        br
+        | countries whereas millions of people in developing countries are denied access to education.
+        |                 
+        br
+        | With CodersTrust&hairsp;&mdash;&hairsp;paid education is made available, if you have access to the internet.
+      |             
+      p
+        | We believe that investing in the education of our youth is something everyone will benefit from.
+        br
+        | The freelance market will have more qualified workers, our students will increase their earnings,
+        |                 
+        br
+        | and CodersTrust will make money to expand the service to more people.
+      |             
+      br
+      br
+      br
+      br
+      |             
+      p
+        a.anchor(href='#about-3')
+          span.w-icons-arrowDown
+  |     
+  section#about-3.about-block.skin-3
+    .container
+      h2 Our Mission
+      |             
+      h4 Nearly every aspect of life has been changed by the Internet.
+      |             
+      p
+        | However, this revolution has not made any significant impact for people at the bottom of the
+        | pyramid.
+        br
+        | CodersTrust is based on the basic premise that there is already an online labor market and several
+        |                 online learning portals,
+        |                 
+        br
+        | but what is missing is a financial system to fund the education of the labor force of tomorrow.
+      |             
+      p
+        | We&rsquo;re building such a system that can have a truly powerful impact for the poor.
+        br
+        | Not only is the brainpower of millions of people currently being wasted, but with the extreme
+        |                 inequality in the world
+        |                 
+        br
+        | it is simply a revolution just waiting to happen.
+      |             
+      
+      br
+      |             
+      a.anchor(href='#about-4')
+        span.w-icons-arrowDown
+  |     
+  section#about-4.default.text-center
+    .container
+      h2 Story
+      |             
+      p CodersTrust is the brainchild of Ferdinand Kj&aelig;rulff. 
+  |     
+  section.gray-block.text-center
+    .container
+      span.person-block.text-center.pulled
+        span.img
+          span.mask
+            img(src='/assets/images/person_face.jpg', alt='')
+        |                 
+        span.name Ferdinand Kj&aelig;rulff
+        |                 
+        span.appointment Founder &amp; CEO
+      |             
+      p
+        | As a Captain of the Danish army he served as recovery officer in Iraq after the fall of Saddam. He
+        | pioneered a recovery project with the allied forces, bringing internet and e-learning to the citizens of
+        | the region in which he was stationed.
+      |             
+      p
+        | The project was a massive success and inspired him to eventually create CodersTrust &ndash; supported by
+        | Danida &ndash; with a vision to democratize access to education via the internet on a global scale.
+      |             
+      p
+        img(src='/assets/images/danida.jpg', alt='')
+      |             
+      br
+      |             
+      br
+      |             
+      br
+      |             
+      h2 Team
+      
+  .container          
+    .row
+      .col-xs-12.col-md-3.text-center.team-country(ng-repeat="team in teams | orderBy:'position'" ng-click="showTab($index)" ng-class="{'col-md-offset-45': $index == (teams.length - 1)}")
+        h5 {{team.name}}
+        .clearfix
+        .team-country-map
+          img.dib(ng-src="{{team.image.original.url}}" alt="{{team.name}}" ng-show="!isActive($index)")
+          img.dib(ng-src="{{team.imageActive.original.url}}" alt="{{team.name}}" ng-show="isActive($index)")
+        
+    .staff-slider.staff.clearfix(ng-repeat="team in teams | orderBy:'position'" ng-show="isActive($index)")
+      .item(ng-repeat="member in team.members | orderBy:'position'")
+        ct-person-block(member-data="member")
+      
+      .arrows
+  |     
+  section.blue-rect.map-section.text-center
+    .container
+      .row
+        .col-xs-12.col-md-10.col-md-offset-1.section-header
+          h3 Offices
+              
+      .row.offices-list
+        .col-xs-12.col-md-4(ng-repeat="office in offices" ng-class="{'col-md-offset-4': (offices.length - 1) == $index }")
+          .title {{office.name}}   
+          .description
+            .w-icon-location
+            | {{office.address}}
+            .number(ng-repeat="phone in office.phones")
+              strong {{phone}}
+          
+        
+  map(center="{{map.position}}" zoom="3" styles="[{'featureType':'water','elementType':'geometry','stylers':[{'color':'#064a75'}]},{'featureType':'landscape','elementType':'geometry','stylers':[{'color':'#24a388'}]},{'featureType':'poi','elementType':'geometry','stylers':[{'color':'#1f8a70'}]},{'featureType':'road.highway','elementType':'geometry','stylers':[{'color':'#fd7400'}]},{'featureType':'road.arterial','elementType':'geometry','stylers':[{'color':'#1f8a70'},{'lightness':-20}]},{'featureType':'road.local','elementType':'geometry','stylers':[{'color':'#1f8a70'},{'lightness':-17}]},{'elementType':'labels.text.stroke','stylers':[{'color':'#ffffff'},{'visibility':'off'},{'weight':0.9}]},{'elementType':'labels.text.fill','stylers':[{'visibility':'on'},{'color':'#ffffff'}]},{'featureType':'poi','elementType':'labels','stylers':[{'visibility':'simplified'}]},{'elementType':'labels.icon','stylers':[{'visibility':'off'}]},{'featureType':'transit','elementType':'geometry','stylers':[{'color':'#1f8a70'},{'lightness':-10}]},{},{'featureType':'administrative','elementType':'geometry','stylers':[{'color':'#1f8a70'},{'weight':0.7}]}]" style="height: 700px;" scrollwheel="false")
+    .offices-list(ng-repeat="office in offices")
+      marker(position="{{office.location.lat}}, {{office.location.lng}}" icon="/assets/images/map-marker.png", ng-click="ngMap.showInfoWindow('w-1')")
+      info-window#w-1
+        div(ng-non-bindable="")
+          .title {{office.name}}   
+          .description
+            .w-icon-location
+            | {{office.address}}
+            .number(ng-repeat="phone in office.phones")
+              strong {{phone}}

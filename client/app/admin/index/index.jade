@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-xs-12
+      h1 Admin
+      table.table
+        thead
+          tr
+            th
+              | Name
+            th
+              | Url
+          tr(ng-repeat="menuItem in menuItemsData")
+            td {{menuItem.name}}
+            td 
+              a(ng-href="{{menuItem.href}}")
+                | Open

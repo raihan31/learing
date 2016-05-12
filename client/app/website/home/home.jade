@@ -1,0 +1,123 @@
+ct-hero(hero-data="heroData")
+  .text-align-center
+    a.btn.btn-primary(href="/signup")
+      | Get Started
+    | &nbsp;
+.container
+  .row
+    .col-xs-12.col-md-10.col-md-offset-1.how-it-works
+      svg
+.blue-rect.dark-blue-rect.margin-for-sm-dvc
+  .container
+    .row
+      .col-xs-12.col-md-10.col-md-offset-1.section-header
+        h3 Set up your CodersTrust profile
+        .text
+          h4 Signing up is quick, simple and free! 
+          p 
+           br
+           |  Get started by telling us about yourself and linking your online profiles that show off your freelancing career so far.
+           br
+           |  We will use this data to analyze your background and recommend the learning path and courses that are right for you.
+           br 
+           | This will also allow us to project your potential earning and repayment schemes. 
+        img(src='/assets/images/setup-profile.jpg' alt='picture')
+.container
+  .row
+    .col-xs-12.col-md-10.col-md-offset-1.section-header
+      h3 Select a learning path of your choice
+      //- .text
+      //-   p 
+      //-    | CodersTrust has partnered up with top online learning providers like
+      //-    a(href="http://www.codeschoold.com/" target="_blank")&nbsp;CodeSchool
+      //-    | &nbsp;and&nbsp;
+      //-    a(href="http://www.pluralsight.com" target="_blank")&nbsp;Pluralsight 
+      //-    | to offer you a world class learning platform. 
+      //-    br
+      //-    | We have carefully selected the best combination of courses into four
+      //-    | effective learning paths of your choice. You will simply need to pass
+      //-    br
+      //-    | a skill assessment test for each learning path to ensure you have 
+      //-    | the right coding prerequisite to complete the courses successfully. 
+  .row.row-learning
+    .col-xs-12.col-md-3(ng-repeat="item in latestLearningItems" ct-learning-path-item data="item")
+.blue-rect.green-blue-rect.no-lift
+  .container
+    .row
+      .col-xs-12.section-header.finance-section-header
+        h1
+          | How do you like to pay?
+          br
+          | Choose your financing method!
+        .text
+          p We offer to let you join CodersTrust in three different ways based on your financial situation:
+    .row.stickers 
+      .col-xs-12.col-sm-4.col-sm-offset-2
+        .stick
+          .w-circle
+            .w-icon.w-paid-white-icon
+          strong Pay full
+          p
+            | amount upfront.
+      .col-xs-12.col-sm-4
+        .stick
+          .w-circle
+            .w-icon.w-deposit-white-icon
+          strong Make an upfront deposit
+          p
+            | and pay the remaining amount with a 10% commission from your online earnings over a 3 year period.
+    .row
+      .col-xs-12.text-align-center.col-sm-6.col-sm-offset-3     
+        br
+        br   
+        a.btn.btn-primary(href="/finance")
+          | Learn More
+        br
+        br
+        br
+.container.z-index-20
+  .row
+    .col-xs-12.blue-rect.section-header
+      h3 Welcome to CodersTrust
+      .text
+        p
+          | On your first day as a CodersTrust student, you will meet your student counselor who will help you get started on your amazing journey with us.
+          br
+          | Your counselor will assign you to a personal coding mentor and introduce you to a small peer group of like-minded students who will work
+          br
+          | as your support system and help your successfully complete assignments and better understand course materials. You will also be granted access  
+          br
+          | to our large community of students, alumni and other mentors. Furthermore, CodersTrust has set up career services, workshops and daily office hours
+          br
+          | to accelerate your learning and earning. We have created an ecosystem of top notch learning, mentorship and support so you can learn new skills,
+          br
+          | stay motivated, build your freelancing profiles successfully and ace online jobs to earn more money!
+          br
+          br
+
+.relative-container.hidden-xs
+  img.intersect-ancestor(src="/assets/images/home-bottom-pic.jpg", alt="Home bottom pic")
+  .pos-absolute-btns.pos-absolute-btns-bottom.text-align-center
+    a.btn.btn-primary(href="/learning")
+      | Learn
+    | &nbsp;
+    a.btn.btn-success(href="/learning")
+      | Earn
+        
+
+
+.clear
+.green-blue-background
+  .container
+    .row
+      .col-xs-12.col-md-10.col-md-offset-1.newsletter
+        h3 Receive our newsletter
+        
+        .letter-parent
+          form.newsletter-form(name="newsletterForm" ng-submit="addSubscriber(newsletterForm)")
+            input(type="email" name="email" ng-model="email")
+            button(type="submit")
+              | Email me a monthly update
+          .letter
+            .left
+            .right  

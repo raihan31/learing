@@ -1,0 +1,20 @@
+.modal-header
+  h3.modal-title Congratulations!
+.modal-body
+  p 
+    | To confirm your enrolment in the&nbsp;
+    strong {{course.name}} at&nbsp;
+    strong {{learningCenter.name}}&nbsp;
+    | you have to pay the&nbsp;
+    strong {{showPriceName()}} {{showPrice()}} {{educationModel.currency}}.
+    
+  p
+    | You can do so by coming to our office located in&nbsp;
+    strong {{learningCenter.address}}&nbsp;
+    | everyday, from&nbsp;
+    strong Sunday to Thursday, from 9:30 6:30.
+  p
+    | When you complete your payment you will receive the activation code to access your profile and learning materials
+    br
+.modal-footer
+  button.btn.btn-primary(type='button', ng-click='ok()') OK

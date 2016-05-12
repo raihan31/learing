@@ -1,0 +1,13 @@
+.select-pane
+  header(class="align-children-middle {{data.headerClass}}" ng-class="{'header-orange': (data.id == 4) || (data.id == 2), \
+    'header-blue': data.id == 5, 'header-green': data.id == 9}")
+    i(class="ct-icon-css3" ng-show="(data.id == 4) || (data.id == 2)")
+    i(class="ct-icon-html5" ng-show="(data.id == 4) || (data.id == 2)")
+    i(class="ct-icon-js" ng-show="(data.id == 2)")
+    i(class="ct-icon-php" ng-show="(data.id == 5)")
+    i(class="ct-icon-upwork" ng-show="(data.id == 9)")
+  article.bottom.align-children-middle
+    h6 {{data.name}}
+  .overlay.align-children-middle(ng-show="data.selected && !preventClick")
+    .checkmark.align-children-middle
+      i.ct-icon-check

@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-xs-10.online-test.online-test-padding-bottom
+      a.online-test-link
+        h4.test-name {{test.name}}
+        span.span-icon-class.span-icon-class-no-padding
+          i.fa.fa-clock-o
+          | {{test.duration / 60}} min
+          i.fa.fa-file-text-o
+          | {{test.questions}} questions
+      p
+        | You can only do the test once. So please take the time, sit in a quite room with internet and conduct the test. We expect that only you are doing the test with no help from a third person. Cheating will automatically lead to a disqualification. Good luck.
+      a.btn.btn-success.btn-start(ui-sref='student.learning.onlinetests.details.start') Start Test
+        .fa.fa-angle-right
+    .col-xs-2
+      ct-student-profile(student-data="studentProfile")

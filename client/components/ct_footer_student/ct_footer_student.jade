@@ -1,0 +1,26 @@
+#footer-student
+  .container
+    .row
+      .col-xs-12.col-md-3.col-md-offset-1.copyright
+        a.logo(href="/")
+          i.ct-icon.ct-icon-ct-logo
+        span ©  Copyright 2015 CodersTrust ApS
+        br
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        a(href="") Privacy 
+        span &nbsp;/&nbsp;
+        a(href="") Terms
+      .col-xs-12.col-md-2
+        h6 CodersTrust
+        ul 
+          li(ng-repeat="item in websiteMenuItems")
+            a(ng-href="{{item.href}}") {{item.name}}
+      .col-xs-12.col-md-2
+        h6 My profile
+        ul 
+          li(ng-repeat="item in studentMenuItems")
+            a(ui-sref="{{item.uiSref}}") {{item.name}}
+      .col-xs-12.col-md-2.col-md-offset-2
+        nav
+          a(ng-repeat="item in socialNetworkNavs" ng-href="{{item.url}}" target="_blank")
+            i(class="{{item.iconClass}}-square")

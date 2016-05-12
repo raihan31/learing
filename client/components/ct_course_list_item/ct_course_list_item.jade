@@ -1,0 +1,32 @@
+.course-list-item.pane
+  header
+    img.course-icon.pull-left(ng-src="{{course.icon.icon.url}}")
+    .enrolled-students.pull-right
+      i.fa.fa-users
+      strong.text {{course.is_enrolled || 1400}} students
+  article
+    h4 {{course.name}}
+    .course-progress
+      .label
+        .pull-left Learned
+        .pull-right {{course.progress || 72}}%
+      uib-progressbar.progress-ct-blue(value="course.progress || 72")
+    .description {{course.description | htmlToPlaintext}}
+    .info
+      .attribute
+        .key Course Name
+        .value {{course.course_duration}}
+      .attribute
+        .key COffline / Face-to-face-class
+        .value {{course.offline_class}}
+      .attribute
+        .key Online class
+        .value {{course.online_class}}
+  .alert.alert-green
+    i.fa.fa-check-circle
+    .text you are enrolled
+  .alert.alert-orange
+    i.fa.fa-times-circle
+    .text you are not enrolled
+  .view
+    a(ui-sref="student.learning.course({id: course.id})") view

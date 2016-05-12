@@ -1,0 +1,80 @@
+main
+  section.map-header-section.text-center
+    .container
+      .row
+        .col-xs-12.col-md-10.col-md-offset-1.section-header
+          h1 Success Stories
+          .text
+            p Our students work in more than 47 countries all over the world.
+  section.map-section.text-center
+    map(center="{{map.position}}" zoom="11" zoom-to-include-markers="true" styles="[{'featureType':'water','elementType':'geometry','stylers':[{'color':'#064a75'}]},{'featureType':'landscape','elementType':'geometry','stylers':[{'color':'#24a388'}]},{'featureType':'poi','elementType':'geometry','stylers':[{'color':'#1f8a70'}]},{'featureType':'road.highway','elementType':'geometry','stylers':[{'color':'#fd7400'}]},{'featureType':'road.arterial','elementType':'geometry','stylers':[{'color':'#1f8a70'},{'lightness':-20}]},{'featureType':'road.local','elementType':'geometry','stylers':[{'color':'#1f8a70'},{'lightness':-17}]},{'elementType':'labels.text.stroke','stylers':[{'color':'#ffffff'},{'visibility':'off'},{'weight':0.9}]},{'elementType':'labels.text.fill','stylers':[{'visibility':'on'},{'color':'#ffffff'}]},{'featureType':'poi','elementType':'labels','stylers':[{'visibility':'simplified'}]},{'elementType':'labels.icon','stylers':[{'visibility':'off'}]},{'featureType':'transit','elementType':'geometry','stylers':[{'color':'#1f8a70'},{'lightness':-10}]},{},{'featureType':'administrative','elementType':'geometry','stylers':[{'color':'#1f8a70'},{'weight':0.7}]}]" style="height: 700px;" scrollwheel="false")
+      marker(ng-repeat="marker in markers" position="{{marker.lat}}, {{marker.lon}}" icon="/assets/images/map-marker.png")
+    .container
+      
+      .w-gallery.gallery.hidden-sm.hidden-xs
+        .prev
+          .w-icon-prev
+      
+        .next
+          .w-icon-next
+        
+        ul#featured.accordion-wrapper
+          li.slide(ng-repeat="ss in successStories")
+            .person-card
+              .img
+                .mask
+                  img(ng-src='{{ss.image.thumb.url}}', alt='{{ss.name}}')
+    
+              .description
+                .name {{ss.name}}
+                .information
+                  | {{ss.story}}
+                .rate
+                  .w-icon-currency
+                  .help {{ss.earning}}
+                ul.shared
+                  li(ng-repeat="social in ss.socialNetworks")
+                    a(ng-href='{{social.url}}' target="_blank")
+                      span(ng-class="{'{{social.iconClass}}': true}")
+          .arrows
+  .container
+    .row.hidden-md.hidden-lg
+      .col-xs-12(ng-repeat="ss in successStories")
+        .person-card.vertical
+          .img
+            .mask
+              img(ng-src='{{ss.image.thumb.url}}', alt='{{ss.name}}')
+
+          .description
+            .name {{ss.name}}
+            .information
+              | {{ss.story}}
+            .rate
+              .w-icon-currency
+              .help {{ss.earning}}
+            ul.shared
+              li(ng-repeat="social in ss.socialNetworks")
+                a(ng-href='{{social.url}}')
+                  span(ng-class="{'{{social.iconClass}}': true}")
+        
+  .container
+    .row
+      .col-xs-12.text-center
+        h2 Customer Reviews
+        .multiple-items-slider
+          .item(ng-repeat="review in customerReviews")
+            .person-card.vertical
+              .img(ng-if="review.avatar")
+                .mask
+                  img(ng-src='{{review.avatar.thumb.url}}', alt='{{review.name}}')
+              .descripton
+                .name {{review.name}}
+
+                .portfolio
+                  a(href='#') {{review.designation}}
+
+                blockquote
+                  p
+                    | {{review.review}}
+        
+          .arrows

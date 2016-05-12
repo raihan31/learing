@@ -1,0 +1,26 @@
+header.hero-unit:not(.section-step) {
+  height: auto;
+  //margin-top: 80px;
+  // margin-bottom: 30px;
+  position: relative;
+
+  .container {
+    min-height: 320px;
+    height: 100%;
+    h1 {
+      margin-top: 128px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      @include ssp-regular($size: "20px", $lH: "28px");
+      width: 100%;
+    }
+
+    ng-transclude {
+      margin-top: 84px;
+      display: block;
+      margin-bottom: 169px;
+    }
+  }
+}

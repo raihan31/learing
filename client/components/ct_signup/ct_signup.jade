@@ -1,0 +1,82 @@
+.row(ng-show="errors")
+  .col-xs-12.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3.errors
+    .alert.alert-danger(ng-repeat='(name, message) in errors')
+      strong {{name}}&nbsp;
+      | {{message}}
+form.signup-form(name="form" novalidate ng-submit="signUp(form)")
+  .row        
+    .form-group.col-xs-12.col-sm-6(ng-class="{ 'col-md-4 col-md-offset-2 col-lg-3 col-lg-offset-3': !fullWidth, 'has-error' : form['student[first_name]'].$invalid && submitted }")
+      .input-group
+        span.input-group-addon 
+          i.ct-icon-profile
+        input#student-first-name.form-control(type='text', placeholder='First Name', name="student[first_name]", ng-model="student_form.first_name", required)
+      div(ng-show="form['student[first_name]'].$invalid && submitted")
+        p.help-block(ng-show="form['student[first_name]'].$error.required")
+          | First Name is required
+    .form-group.col-xs-12.col-sm-6(ng-class="{ 'col-md-4 col-lg-3': !fullWidth, 'has-error' : form['student[last_name]'].$invalid && submitted }")
+      .input-group
+        span.input-group-addon 
+          i.ct-icon-profile
+        input#student-last-name.form-control(type='text', placeholder='Last Name', name="student[last_name]", ng-model="student_form.last_name", required)
+      div(ng-show="form['student[last_name]'].$invalid && submitted")
+        p.help-block(ng-show="form['student[last_name]'].$error.required")
+          | Last Name is required
+  .row
+    .form-group.col-xs-12.col-sm-12(ng-class="{ 'col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3': !fullWidth, 'has-error' : form['student[email]'].$invalid && submitted }")
+      .input-group
+        span.input-group-addon 
+          i.ct-icon-email
+        input#student-email.form-control(type='email', placeholder='Email', name="student[email]", ng-model="student_form.email", required)
+      div(ng-show="form['student[email]'].$invalid && submitted")
+        p.help-block(ng-show="form['student[email]'].$error.required")
+          | Email is required
+        p.help-block(ng-show="form['student[email]'].$error.email")
+          | Email is invalid please provide a valid email 
+          | for example: example@example.com
+  .row
+    .form-group.col-xs-12.col-sm-6(ng-class="{ 'col-md-4 col-md-offset-2 col-lg-3 col-lg-offset-3': !fullWidth, 'has-error' : form['student[country]'].$invalid && submitted }")
+        .input-group
+          span.input-group-addon 
+            i.fa.fa-globe
+          select#student-country.form-control.select-class(name="student[country]", ng-model="country_check", ng-options="country as country.name for country in countries track by country.id", required)
+            option(value="" disabled selected) Select your country
+        div(ng-show="form['student[country]'].$invalid && submitted")
+          p.help-block(ng-show="form['student[country]'].$error.required")
+            | Country is required
+    .form-group.col-xs-12.col-sm-6(ng-class="{ 'col-md-4 col-lg-3': !fullWidth, 'has-error' : form['student[mobile]'].$invalid && submitted }")
+      .input-group
+        span.input-group-addon 
+          i.ct-icon-phone
+        input#student-mobile.form-control(type='tel', placeholder='Mobile', name="student[mobile]", ng-model="student_form.mobile", required)
+      div(ng-show="form['student[mobile]'].$invalid && submitted")
+        p.help-block(ng-show="form['student[mobile]'].$error.required")
+          | Mobile is required
+  .row
+    .form-group.col-xs-12.col-sm-6(ng-class="{ 'col-md-4 col-md-offset-2 col-lg-3 col-lg-offset-3': !fullWidth, 'has-error' : form['student[password]'].$invalid && submitted }")
+      .input-group
+        span.input-group-addon 
+          i.ct-icon-lock
+        input#student-password.form-control(type='password', placeholder='Password', name="student[password]", ng-model="student_form.password", required, ng-minlength="8")
+      div(ng-show="form['student[password]'].$invalid && submitted")
+        p.help-block(ng-show="form['student[password]'].$error.required")
+          | Password is required
+        p.help-block(ng-show="form['student[password]'].$error.minlength")
+          | Password min length is 8 letters
+
+    .form-group.col-xs-12.col-sm-6(ng-class="{ 'col-md-4 col-lg-3': !fullWidth, 'has-error' : form['student[password_confirmation]'].$invalid && submitted }")
+      .input-group
+        span.input-group-addon 
+          i.ct-icon-lock
+        input#student-password-confirmation.form-control(type='password', placeholder='Password Confirmation', name="student[password_confirmation]", ng-model="student_form.password_confirmation", required, valid-password-c="student_form.password")
+      div(ng-show="form['student[password_confirmation]'].$invalid && submitted")
+        p.help-block(ng-show="form['student[password_confirmation]'].$error.required")
+          | Password Confirmation is required
+        p.help-block(ng-show="form['student[password_confirmation]'].$error.noMatch")
+          | Doesn't match a password
+    
+  .align-children-middle.text-align-center.next-state(ng-hide="student.hideSingUpNav")
+    br
+    button.btn.btn-primary(type="submit") next
+  .align-children-middle.text-align-center(ng-show="student.hideSingUpNav")
+    br
+    button.btn.btn-primary(type="submit") Sign Up

@@ -1,0 +1,58 @@
+.container
+  .row
+    .col-xs-12
+      h1 Offices
+      table.table
+        thead
+          tr
+            th Name
+            th Address
+            th Phones
+            th Location
+            th Actions
+        tbody
+          tr(ng-repeat='office in offices track by $index', ng-show="office")
+            td {{office.name}}
+            td {{office.address}}
+            td
+              ul(ng-show='{{office.phones}}').feature-lists
+                li(data-ng-repeat='phone in office.phones track by $index')
+                  span {{phone}}
+            td
+              div Lat: {{office.location.lat}}
+              div Lng: {{office.location.lng}}
+            td.actions
+              a(ng-href='#' class='btn-sm btn-warning' ng-click='editOffice(office._id)')
+                i.fa.fa-pencil
+              a(ng-href='#' class='btn-sm btn-danger' ng-click='removeOffice(office._id)')
+                i.fa.fa-times
+  .row
+    .col-xs-12
+      a(ng-click="toggleNewForm()", ng-href='#').btn.btn-primary {{addOfficeText}}
+      form.form(name='form', novalidate='', ng-show="newFormVisible")
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', ng-model='office.name', required, focus-input-on='{{newFormVisible}}')
+          p.help-block(ng-show='form.name.$error.required && submitted') Name is required
+        .form-group
+          label Address
+          input.form-control(type='text', name='address', ng-model='office.address')
+        .form-group
+          label Phones
+            a(ng-href='#' ng-click='addPhone()').btn-info.btn-sm.add-phone-button
+              i.fa.fa-plus
+          div(data-ng-repeat='phone in office.phones track by $index').add-phones
+            a(ng-href='#' ng-click='removePhone($index)' ng-hide='$index == 0').remove-social-network
+              i.fa.fa-times-circle-o
+            input.form-control(type='text', name='phones', ng-model='office.phones[$index]' placeholder='phone number')
+        .form-group
+          label Location(Lat)
+          input.form-control(type='text', name='location_lat', ng-model='office.location.lat')
+        .form-group
+          label Location(Lng)
+          input.form-control(type='text', name='location_lng', ng-model='office.location.lng')
+        div.pull-right
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createOffice()' ng-hide='isEdit')
+            | Create office
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updateOffice(office._id)' ng-show='isEdit')
+            | Update office

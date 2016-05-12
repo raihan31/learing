@@ -1,0 +1,52 @@
+.education-model {
+  @include selected;
+  box-shadow: 0px 5px 16px 0px #c9d3d6;
+  border-radius: 4px;
+  header {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #e8eef1;
+
+    padding: 20px 25px;
+
+    h5 {
+      color: $blue-color;
+      font-size: 25px;
+      line-height: 1;
+
+      margin: 0;
+
+    }
+  }
+  article {
+    background: url("/assets/images/education-model-shadow.png") repeat-x top left;
+    margin-top: 0 !important;
+    padding: 24px 15px;
+
+    color: $asphalt-color;
+    @include ssp-regular($size: "15px", $lH: "20px");
+
+    ul {
+      margin: 0;
+      list-style: none;
+    }
+    li {
+      color: $blue-grey-color;
+      list-style: none;
+      padding-left: 15px;
+      position: relative;
+      font-weight: 700;
+
+      &:before {
+        content: "•";
+
+        color: $blue-grey-color;
+        line-height: 1;
+
+        position: absolute;
+        top: 4px;
+        left: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+section.section-step
+  .container
+    header.row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        ct-signup-nav(state='"select_learning_center"')
+        h3 SELECT YOUR LEARN & EARN CENTER
+        p 
+          | This is the place where you will come for class twice a week 
+          br 
+          | (Click on the image to select)
+    article
+      .row
+        .col-xs-12.col-sm-6.col-md-4(ng-repeat="lc in centers")
+          .learning-center(ct-select-pane event-name="'learning_center:selected'" data="lc")
+            header
+              img(ng-src="{{lc.picture}}" alt="{{lc.name}}")
+            article
+              h6 {{lc.name}}
+              .text(ng-show="lc.address.length")
+                i.ct-icon-marker
+                span {{lc.address}}
+            .overlay.align-children-middle(ng-show="lc.selected")
+              .checkmark.align-children-middle
+                i.ct-icon-check
+  ct-signup-next-step-btn(ng-show="isSelected()" state="'select_learning_center'")
+      
+        //- .col-xs-12.col-sm-6.col-md-4.col-md-offset-2
+        //-   .select-pane.select-pane-large
+        //-     img(src="/assets/images/image-missing.jpg" alt="alt")
+        //-     .bottom
+        //-       h6 Coderstrust L&R Center - Gulshan 2
+        //-       p Description
+        //-     
+        //- .col-xs-12.col-sm-6.col-md-4
+        //-   .select-pane.select-pane-large
+        //-     img(src="/assets/images/image-missing.jpg" alt="alt")
+        //-     .bottom
+        //-       h6 Coderstrust L&R Center - Gulshan 2
+        //-       p Description

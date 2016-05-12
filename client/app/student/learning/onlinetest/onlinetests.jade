@@ -1,0 +1,43 @@
+.container
+  .row
+    .col-xs-10.online-test
+      h5.skill-test-margin-top Skill Tests
+      ul
+        li(ng-repeat="onlineTest in onlineTests")
+          div(ng-repeat="test in onlineTest.tests | filter:{ status: false}")
+            a.online-test-link(ui-sref="student.learning.onlinetests.details({testId: test.id})")
+              .test-content
+                h4.test-name
+                  i.fa.fa-check-square-o
+                  | {{test.name}}
+                  //.btn-edit.btn.col-md-offset-8
+                  //  i.fa.fa-chevron-right
+                span.span-icon-class
+                  i.fa.fa-clock-o
+                  | {{test.duration / 60}} min
+                  i.fa.fa-file-text-o
+                  | {{test.questions}} questions
+      h5 Completed Tests
+      div.panel.panel-info.col-xs-12.test-panel-heading
+        h6.col-xs-10 Tests
+        h6.col-xs-1.test-completed-score-border Score
+        h6.col-xs-1 Status
+      div.col-xs-12(ng-repeat="onlineTest in onlineTests")
+        div.test-completed(ng-repeat="test in onlineTest.tests | filter:{ status: false}")
+          //a(ui-sref="student.learning.onlinetests.details({testId: test.id})")
+          h6.col-xs-10 {{test.name}}
+          span Taken on 28/12/2015
+          h6.col-xs-1.test-completed-score {{4.5 }} / 5
+          h6.col-xs-1
+            a.btn.btn-success.btn-status Complete
+          hr
+
+      //ul
+      //  li(ng-repeat="onlineTest in onlineTests")
+      //    div(ng-repeat="test in onlineTest.tests | filter:{ status: false}")
+      //      a(ui-sref="student.learning.onlinetests.details({testId: test.id})")
+      //        h4 {{test.name}}
+    .col-xs-2
+      ct-student-profile(student-data="studentProfile")
+
+

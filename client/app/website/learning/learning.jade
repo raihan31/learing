@@ -1,0 +1,147 @@
+ct-hero(hero-data="heroData")
+main(role='main')
+  .skills-list
+    ul
+      li
+        img(src='/assets/images/skills/img1.png', alt='')
+      li
+        img(src='/assets/images/skills/img2.png', alt='')
+      li
+        img(src='/assets/images/skills/img3.png', alt='')
+      li
+        img(src='/assets/images/skills/img4.png', alt='')
+      li
+        img(src='/assets/images/skills/img5.png', alt='')
+      li
+        img(src='/assets/images/skills/img6.png', alt='')
+      li
+        img(src='/assets/images/skills/img7.png', alt='')
+      li
+        img(src='/assets/images/skills/img8.png', alt='')
+      li
+        img(src='/assets/images/skills/img9.png', alt='')
+  .container.text-center
+    .row
+      .col-xs-12.col-md-10.col-md-offset-1
+        h2 Select a learning path of your choice
+        
+        p
+          br
+          br
+        //-   | We&apos;ve partnered up with the world&apos;s best online learning providers such as
+        //-   br
+        //-   | 
+        //-   a(href="http://codeschool.com" target="_blank") codeschool.com&nbsp;
+        //-   | and 
+        //-   a(href="http://pluralsight.com" target="_blank") pluralsight.com&nbsp;
+        //-   | to make their learning paths, courses and content
+        //-   br
+        //-   | available through our platform. You will need to pass a skill assessment test for
+        //-   br
+        //-   | each learning path to ensure you have the right coding prerequisites
+        //-   br
+        //-   | to complete the courses successfully.
+        //-   br
+        //-   br
+  .tabulation-styled
+    // Nav tabs
+    .container
+      ul.nav.nav-tabs.row(role='tablist')
+        li.col-xs-3(role='presentation', ng-repeat="tab in tabs", ng-class="{'active': isActive($index)}")
+          a(ng-click="showTab($index)")
+            span.back(ng-bind-html="tab.icon")
+            span.title.small-device-font{{tab.name}}
+        .arrows.test-arrows
+    // Tab panes
+    
+    .tab-content.tab-pane(role='tabpanel', ng-repeat="tab in tabs", ng-show="tab.active")
+      .container.text-center
+        .row.circles-list
+          .col-xs-12.col-sm-6.col-md-3(ng-repeat="feature in tab.features", ng-class="{'col-md-offset-{{countOffset(tab.features.length, $index)}}': isOffset(tab.features.length, $index)}")
+            .circle
+              .help
+                .animated.counter {{feature.value}}
+                .hint {{feature.name}}
+  .blue-rect(ng-repeat="tab in tabs", ng-show="tab.active")
+    .container.text-center    
+      .row
+        .col-xs-12.col-md-10.col-md-offset-1.section-header
+          h2 Description
+          .text.small-device-video(ng-bind-html="trustHtml(tab.description)")
+            br
+            
+
+  .container.text-center(ng-repeat="tab in tabs", ng-show="tab.active && tab.mentors.length")
+    h2 Mentors
+    .multiple-items-slider.persons-list
+      .item(ng-repeat="mentor in tab.mentors")
+        
+          .person-card.vertical.overflow
+            .img
+              .mask
+                img(ng-src='{{mentor.image.thumb.url}}', alt='{{mentor.name}}')
+      
+            .description
+              .name {{mentor.name}}
+        
+              .appointment {{mentor.position}}
+        
+              .user-information
+                p(toggle-shorter-text text="mentor.shortDescription")
+          
+                .skills
+                  h4 Skills:
+            
+                  p {{mentor.skills | joinHashBy:'name'}}
+          
+                //- ul.shared.theme-shared-2
+                //-   li
+                //-     a(href='#')
+                //-       span.w-icon-link
+        //- .clearfix(ng-if="(($index + 1) % 3) == 0")
+  .blue-rect.dark-blue-rect(ng-repeat="tab in tabs", ng-show="tab.active && tab.portfolios.length")
+    .container
+      .row
+        .col-xs-12.col-md-10.col-md-offset-1.section-header
+          h3 Learn to build
+      .row.portfolio-list
+        .col-xs-12.col-sm-6.col-md-4.portfolio-item(ng-repeat="portfolio in tab.portfolios")
+          .title
+            | {{portfolio.name}}
+            .skills {{portfolio.subName}}
+    
+          a.img(ng-href='{{portfolio.url}}' target="_blank")
+            img(ng-src='{{portfolio.image.thumb.url}}', alt='{{portfolio.name}}')
+  
+        
+      
+    
+    
+  .container.hidden-xs.hidden-sm
+    .row
+      .col-xs-12.text-center
+        br
+        br
+        h2 More than just learning
+          
+    .main-slider.workshops
+      .item(ng-repeat="workshop in workshops")
+        .w-item
+          .img(ng-background-image background-url="workshop.image.thumb.url")
+    
+          .description
+            .date {{workshop.createdAt | date:'longDate'}}
+      
+            //-.theme Events / Digital World 2014, Dhaka
+      
+            .title {{workshop.name}}
+      
+            p {{workshop.description}}
+
+      .arrows
+    .text-center
+      a.w-btn.blue(href='/earn')
+        span.help EARN
+      br 
+      br 
+      br 

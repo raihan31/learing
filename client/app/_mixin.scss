@@ -1,0 +1,195 @@
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_variables';
+
+@mixin font-regular($ff, $size, $lH, $fW, $style) {
+  font-family: $ff;
+  font-style: unquote($style);
+  font-size: unquote($size);
+  font-weight: unquote($fW);
+  line-height: unquote($lH);
+
+}
+
+@mixin oxygen-regular($size: "16px", $lH: "24px", $fW: "400", $style: "normal") {
+  @include font-regular('Oxygen', $size, $lH, $fW, $style);
+}
+
+@mixin oxygen-bold($size, $lH, $style: "normal") {
+    @include oxygen-regular($size, $lH, "800", $style);
+}
+
+@mixin oxygen-h2-bold {
+    @include oxygen-bold("50px", $lH: "58px");
+    text-transform: uppercase;
+    @media (max-width: $screen-xs-max) {
+      font-size: 36px;
+      line-height: 44px;
+
+    }
+}
+
+@mixin oxygen-h3-bold {
+    @include oxygen-bold($size: "36px", $lH: "44px");
+    text-transform: uppercase;
+    @media (max-width: $screen-xs-max) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+}
+
+@mixin oxygen-h4-bold {
+    @include oxygen-bold($size: "28px", $lH: "36px");
+    text-transform: uppercase;
+}
+
+@mixin oxygen-h5-bold {
+    @include oxygen-bold($size: "20px", $lH: "28px");
+    text-transform: uppercase;
+}
+
+@mixin oxygen-h6-bold {
+    @include oxygen-bold($size: "16px", $lH: "24px");
+    text-transform: uppercase;
+
+}
+
+
+@mixin ssp-regular($size: "16px", $lH: "24px", $fW: "300", $style: "normal") {
+  @include font-regular('Source Sans Pro', $size, $lH, $fW, $style);
+}
+
+@mixin proxima-nova-regular($size: "14px", $lH: "24px", $fW: "400", $style: "normal") {
+  @include font-regular('proxima-nova', $size, $lH, $fW, $style);
+}
+
+@mixin proxima-nova-h2-bold {
+    @include proxima-nova-regular($size: "39px", $lH: "47px",  $fW: "800");
+    // text-transform: uppercase;
+    @media (max-width: $screen-xs-max) {
+      font-size: 36px;
+      line-height: 44px;
+
+    }
+}
+
+@mixin proxima-nova-h3-bold {
+    @include proxima-nova-regular($size: "34px", $lH: "42px",  $fW: "800");
+    // text-transform: uppercase;
+    @media (max-width: $screen-xs-max) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+}
+
+@mixin proxima-nova-h4-bold {
+    @include proxima-nova-regular($size: "26.25px", $lH: "34px",  $fW: "800");
+    // text-transform: uppercase;
+}
+
+@mixin proxima-nova-h5-bold {
+    @include proxima-nova-regular($size: "18.75px", $lH: "26.25px",  $fW: "800");
+    // text-transform: uppercase;
+}
+
+@mixin proxima-nova-h6-bold {
+    @include proxima-nova-regular($size: "15px", $lH: "22.25px",  $fW: "700");
+    // text-transform: uppercase;
+}
+
+@mixin ssp-h1-bold {
+    @include ssp-regular($size: "55px", $lH: "60px",  $fW: "900");
+}
+
+@mixin ssp-h2-bold {
+    @include ssp-regular($size: "45px", $lH: "50px",  $fW: "900");
+}
+
+@mixin ssp-h3-bold {
+    @include ssp-regular($size: "35px", $lH: "38px",  $fW: "700");
+}
+
+@mixin ssp-h4-bold {
+    @include ssp-regular($size: "26.25px", $lH: "34px",  $fW: "700");
+    // text-transform: uppercase;
+}
+
+@mixin ssp-h5-bold {
+    @include ssp-regular($size: "18.75px", $lH: "26.25px",  $fW: "700");
+    // text-transform: uppercase;
+}
+
+@mixin ssp-h6-bold {
+    @include ssp-regular($size: "15px", $lH: "22.25px",  $fW: "700");
+    // text-transform: uppercase;
+}
+
+@mixin selected {
+  .overlay {
+    left: 0;
+    position: absolute;
+    top:0;
+    z-index: 5;
+
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    text-align: center;
+
+    .checkmark {
+      background: $green-color;
+      border-radius: 158px;
+
+      height: 76px;
+      width: 76px;
+
+      text-align: center;
+      i {
+        color: #fff;
+        font-size: 35px;
+      }
+    }
+  }
+}
+@mixin vertical {
+  font-size: 0;
+  text-align: center;
+  .help {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 1px;
+    margin-left: -0.1%;
+  }
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin display-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin clear-after {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

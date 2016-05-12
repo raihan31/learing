@@ -1,0 +1,39 @@
+.course-parent
+  .container
+    .col-xs-3.col-xs-3-padding
+      .course
+        .container
+          .row.row-relative
+            .col-xs-12.col-md-3#sidebar
+              strong.content-type course
+              .course-icon(ng-bind-html="trustAsHtml(course.icon)")
+              h4 {{course.name}}
+              strong.content-type course duration
+              h6 {{course.duration}}
+              strong.content-type Offline / Face-to-face-class
+              h6 {{course.offline_class}}
+              strong.content-type Online class
+              h6 {{course.online_class}}
+              .info
+                .alert.alert-orange(ng-if="course.is_enrolled === false")
+                  i.fa.fa-times-circle
+                  .text You are not Enrolled
+                .alert.alert-green(ng-if="course.is_enrolled === true")
+                  i.fa.fa-check-circle
+                  .text You are Enrolled
+                a.link-with-icon
+                  i.fa.fa-file-text-o
+                  span.text Course Description
+                a.link-with-icon
+                  i.fa.fa-users
+                  span.text Community
+      .course.darker
+        .container
+          .row.row-relative
+            .col-xs-12.col-md-2#sidebar-navigation
+              strong.content-type skills
+              ct-course-accordion(skills-data="skills")
+    .col-xs-7
+      ct-course-content
+    .col-xs-2
+      ct-student-profile(student-data="studentProfile")

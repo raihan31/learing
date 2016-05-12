@@ -1,0 +1,61 @@
+@import "_variables";
+
+.navigation {
+  display: inline-block;
+  position: relative;
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+
+  .line {
+    position: absolute;
+    top: 26px;
+    left: 0;
+
+    height: 2px;
+    width: 100%;
+
+    background-color: #eef1f2;
+    z-index: 1;
+  }
+
+  .dot {
+    display: inline-block;
+
+    cursor: pointer;
+    background-color: $white;
+    border: 2px solid $blue-grey-color;
+    border-radius: 150px;
+
+    height: 53px;
+    width: 53px;
+
+    position: relative;
+    z-index: 5;
+
+    color: $blue-grey-color;
+    @include ssp-regular($size: "29.81px", $fW: "700", $lH: "1");
+
+    padding: 10px 17px;
+    margin-left: 53px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.disabled {
+      cursor: default;
+
+      color: #eef1f2;
+      border-color: #eef1f2;
+    }
+
+    &.active {
+      cursor: default;
+
+      color: $light-blue-color;
+      border-color: $light-blue-color;
+    }
+  }
+}

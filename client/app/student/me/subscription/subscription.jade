@@ -1,0 +1,77 @@
+.container.student-about.subscriptions
+  .row
+    .col-xs-12
+      div(ncy-breadcrumb)
+  .row
+    .col-xs-12
+      h5 Subscription details
+  .row
+    .col-xs-12.col-md-5
+      .info
+        .attribute
+          .key student batch
+          .value {{subscription.student_batch}}
+        .attribute
+          .key selected course
+          .value {{subscription.course_name}}
+        .attribute
+          .key education model
+          .value {{subscription.educationModel}}
+        .attribute
+          .key Allowed number of installments
+          .value {{subscription.installments}}
+        .attribute
+          .key Join CT Agency
+          .value {{subscription.ct_agency ? 'Yes' : 'Optional'}}
+    .col-xs-12.col-md-5.col-md-offset-1
+      .info
+        .attribute
+          .key course fee
+          .value $ {{subscription.course_fee}}
+        .attribute
+          .key security deposity
+          .value $ {{subscription.security_deposit}}
+        .attribute
+          .key CT Service Charge Percentage
+          .value {{subscription.service_charge_percentage}}
+        .attribute
+          .key Confirmed paid amount
+          .value $ {{subscription.paid_amount}}
+  .row
+    .col-xs-12
+      br
+      br
+      a.btn.btn-primary(ui-sref="student.me.subscription.payment({id: subscription.id})")
+        | Pay now
+  .row
+    .col-xs-12
+      h5 Your payments
+    .col-xs-12
+      table.table.table-hover.table-subscriptions
+        tr
+          th number
+          th payment method
+          th basic amount
+          th service charge
+          th total amount
+          th status
+
+
+        tr(ng-repeat="item in payments")
+          td.cell-number {{item.id}}
+          td.cell-icon
+            strong {{item.payment_method}}
+          td.cell-fee
+            | $
+            strong {{item.basic_amount}}
+          td.cell-deposit
+            | $
+            strong {{item.service_charge}}
+          td.cell-paid
+            | $
+            strong {{item.total_paid_amount}}
+          td.cell-label
+            .label.status-label(class="label-{{item.status}}")
+              | {{item.status}}
+
+

@@ -1,0 +1,60 @@
+.container
+  .row
+    .col-xs-12
+      h1 Mentor
+      table.table
+        thead
+          tr
+            th Name
+            th Position
+            th Short Description
+            th Skills
+            th Image
+            th Actions
+        tbody
+          tr(ng-repeat='mentor in mentors track by $index', ng-show="mentor")
+            td {{mentor.name}}
+            td {{mentor.position}}
+            td {{mentor.shortDescription}}
+            td.mentor-badge
+              span(data-ng-repeat='skill in mentor.skills').badge.progress-bar-success {{skill.name}} &nbsp;
+            td
+              img(ng-src='{{mentor.image.original.url}}').index-view-image
+            td.actions
+              a(ng-href='#' class='btn-sm btn-warning' ng-click='editMentor(mentor._id)')
+                i.fa.fa-pencil
+              a(ng-href='#' class='btn-sm btn-danger' ng-click='removeMentor(mentor._id)')
+                i.fa.fa-times
+  .row
+    .col-xs-12
+      a(ng-click="toggleNewForm()", ng-href='#').btn.btn-primary {{addMentorText}}
+      form.form(name='form', novalidate='', ng-show="newFormVisible")
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', ng-model='mentor.name', focus-input-on='{{newFormVisible}}')
+          p.help-block(ng-show='form.name.$error.required && submitted') Name is required
+        .form-group
+          label Position
+          input.form-control(type='text', name='name', ng-model='mentor.position')
+        .form-group
+          label Short Designation
+          textarea.form-control(name='shortDescription', ng-model='mentor.shortDescription')
+        div
+          a(hg-href='#' ng-click='addSkill()').btn
+            i.fa.fa-plus Skill
+        div.social-network
+          div(ng-repeat='skill in mentor.skills track by $index').social-network-item
+            a(ng-href='#' ng-click='removeSkill($index)').remove-social-network
+              i.fa.fa-times-circle-o
+            label Skill
+            input.form-control(type='text', name='skill.name', ng-model='skill.name')
+        .form-group
+          a.btn.btn-primary(name='mentor_image', ng-model='mentor_image', ngf-select="setMentorImage($file, $invalidFiles)" accept="image/*" ngf-max-size="1MB") Select Mentor Image
+          div.preview-wrapper
+            p(ng-show='errorMsg').alert.alert-danger {{errorMsg}}
+            img(src='{{mentor.image.original.url}}' ngf-thumbnail="mentor_image" ng-show='mentor.image || mentor_image').preview-image
+        div.pull-right
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='createMentor()' ng-hide='isEdit')
+            | Create Mentor
+          button.btn.btn-inverse.btn-lg.btn-login(type='submit', ng-click='updateMentor(mentor._id)' ng-show='isEdit')
+            | Update Mentor

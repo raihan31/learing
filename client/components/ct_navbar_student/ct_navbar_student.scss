@@ -1,0 +1,93 @@
+.navbar.navbar-default.navbar-fixed-top.ct-navbar.ct-navbar-student {
+  background-color: transparent;
+  box-shadow: none;
+
+  height: 65px;
+  transition: all .5s;
+
+  &.navbar-blue {
+    background: $blue-color;
+    box-shadow: 0 3px 10px transparentize($blue-color, .8);
+  }
+  .navbar-header {
+    background-color: $blue-color;
+    margin-left: 15px;
+  }
+
+  .navbar-brand {
+    height: 65px;
+    padding: 25px;
+    i {
+      font-size: 13px;
+    }
+  }
+
+  .collapse.navbar-collapse {
+    background-color: transparent;
+    margin-left: 159px;
+  }
+
+  .nav.navbar-nav.navbar-nav-ct {
+
+    li {
+      padding: 0;
+      margin: 0;
+      position: relative;
+
+      &.active {
+        border-bottom: 0;
+        background-color: transparentize($white, .75);
+        a:not(.btn) {
+          color: $white;
+          transition: all .5s;
+        }
+        &:after {
+          width: 100%;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 0;
+        height: 3px;
+
+        background: $light-blue-color;
+        transition: width .5s;
+      }
+      a:not(.btn) {
+        color: transparentize($white, .35);
+        padding: 24px 25px;
+        transition: color .5s;
+
+        &:hover {
+          color: $white;
+        }
+        i {
+          font-size: 17px;
+          padding-right: 5px;
+        }
+      }
+
+      a.btn {
+        height: auto;
+        margin-top: 14px;
+
+        font-size: 15px;
+        line-height: 1;
+        text-transform: none;
+
+        &:hover {
+          color: $white;
+          border-color: $light-blue-color;
+          background-color: $light-blue-color;
+        }
+
+      }
+    }
+  }
+}
